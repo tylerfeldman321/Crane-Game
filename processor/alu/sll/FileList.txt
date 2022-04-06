@@ -1,0 +1,8 @@
+sll_barrel_shifter.v
+sll_barrel_shifter_tb.v
+sll_1.v
+sll_16.v
+sll_2.v
+sll_4.v
+..\mux\mux_2.v
+sll_8.v

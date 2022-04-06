@@ -1,0 +1,280 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 10;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001ab950b57f0 .scope module, "sra_barrel_shifter_tb" "sra_barrel_shifter_tb" 2 2;
+ .timescale -9 -10;
+v000001ab95111180_0 .net "ctrl_shiftamt", 4 0, L_000001ab95113af0;  1 drivers
+L_000001ab95150088 .functor BUFT 1, C4<11111111111111100111100100111000>, C4<0>, C4<0>, C4<0>;
+v000001ab95111b80_0 .net "data_in", 31 0, L_000001ab95150088;  1 drivers
+v000001ab95111a40_0 .net "data_out", 31 0, L_000001ab95113370;  1 drivers
+v000001ab95111400_0 .var/i "i", 31 0;
+L_000001ab95113af0 .part v000001ab95111400_0, 0, 5;
+S_000001ab950b5980 .scope module, "shifter" "sra_barrel_shifter" 2 8, 3 1 0, S_000001ab950b57f0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 32 "data_in";
+    .port_info 1 /INPUT 5 "ctrl_shiftamt";
+    .port_info 2 /OUTPUT 32 "data_out";
+v000001ab9510e8e0_0 .net "ctrl_shiftamt", 4 0, L_000001ab95113af0;  alias, 1 drivers
+v000001ab9510e980_0 .net "data_in", 31 0, L_000001ab95150088;  alias, 1 drivers
+v000001ab9510ea20_0 .net "data_out", 31 0, L_000001ab95113370;  alias, 1 drivers
+v000001ab95111900_0 .net "shift_1_out", 31 0, L_000001ab95111c20;  1 drivers
+v000001ab951119a0_0 .net "shift_2_out", 31 0, L_000001ab95110780;  1 drivers
+v000001ab951100a0_0 .net "shift_4_out", 31 0, L_000001ab95110a00;  1 drivers
+v000001ab95110820_0 .net "shift_8_out", 31 0, L_000001ab95111f40;  1 drivers
+L_000001ab951110e0 .part L_000001ab95113af0, 0, 1;
+L_000001ab951112c0 .part L_000001ab95113af0, 1, 1;
+L_000001ab95111360 .part L_000001ab95113af0, 2, 1;
+L_000001ab95110b40 .part L_000001ab95113af0, 3, 1;
+L_000001ab95113f50 .part L_000001ab95113af0, 4, 1;
+S_000001ab9504d190 .scope module, "shift_1" "sra_1" 3 12, 4 1 0, S_000001ab950b5980;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "data_out";
+    .port_info 1 /INPUT 32 "data_in";
+    .port_info 2 /INPUT 1 "shift";
+v000001ab950affd0_0 .net *"_ivl_3", 0 0, L_000001ab95110460;  1 drivers
+v000001ab950af7b0_0 .net *"_ivl_8", 30 0, L_000001ab95110500;  1 drivers
+v000001ab950b0ed0_0 .net "data_in", 31 0, L_000001ab95150088;  alias, 1 drivers
+v000001ab950af8f0_0 .net "data_out", 31 0, L_000001ab95111c20;  alias, 1 drivers
+v000001ab950af990_0 .net "shift", 0 0, L_000001ab951110e0;  1 drivers
+v000001ab950b0250_0 .net "shifted_data", 31 0, L_000001ab95110e60;  1 drivers
+L_000001ab95110460 .part L_000001ab95150088, 31, 1;
+L_000001ab95110e60 .concat8 [ 31 1 0 0], L_000001ab95110500, L_000001ab95110460;
+L_000001ab95110500 .part L_000001ab95150088, 1, 31;
+S_000001ab9504d320 .scope module, "pick_shifted_or_not" "mux_2" 4 12, 5 1 0, S_000001ab9504d190;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "out";
+    .port_info 1 /INPUT 1 "select";
+    .port_info 2 /INPUT 32 "in0";
+    .port_info 3 /INPUT 32 "in1";
+v000001ab950b0430_0 .net "in0", 31 0, L_000001ab95150088;  alias, 1 drivers
+v000001ab950af850_0 .net "in1", 31 0, L_000001ab95110e60;  alias, 1 drivers
+v000001ab950b0cf0_0 .net "out", 31 0, L_000001ab95111c20;  alias, 1 drivers
+v000001ab950b1290_0 .net "select", 0 0, L_000001ab951110e0;  alias, 1 drivers
+L_000001ab95111c20 .functor MUXZ 32, L_000001ab95150088, L_000001ab95110e60, L_000001ab951110e0, C4<>;
+S_000001ab9504d4b0 .scope module, "shift_16" "sra_16" 3 16, 6 1 0, S_000001ab950b5980;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "data_out";
+    .port_info 1 /INPUT 32 "data_in";
+    .port_info 2 /INPUT 1 "shift";
+v000001ab950afb70_0 .net *"_ivl_11", 0 0, L_000001ab95110d20;  1 drivers
+v000001ab950b0390_0 .net *"_ivl_13", 0 0, L_000001ab95110f00;  1 drivers
+v000001ab950b02f0_0 .net *"_ivl_15", 0 0, L_000001ab95111040;  1 drivers
+v000001ab950b0a70_0 .net *"_ivl_17", 0 0, L_000001ab95111860;  1 drivers
+v000001ab950afc10_0 .net *"_ivl_19", 0 0, L_000001ab95112c90;  1 drivers
+v000001ab950b0e30_0 .net *"_ivl_21", 0 0, L_000001ab95113a50;  1 drivers
+v000001ab950b0f70_0 .net *"_ivl_23", 0 0, L_000001ab95112fb0;  1 drivers
+v000001ab950afd50_0 .net *"_ivl_25", 0 0, L_000001ab95113230;  1 drivers
+v000001ab950b04d0_0 .net *"_ivl_27", 0 0, L_000001ab95112d30;  1 drivers
+v000001ab950b10b0_0 .net *"_ivl_29", 0 0, L_000001ab951134b0;  1 drivers
+v000001ab950b0570_0 .net *"_ivl_3", 0 0, L_000001ab95111720;  1 drivers
+v000001ab950b1150_0 .net *"_ivl_31", 0 0, L_000001ab951123d0;  1 drivers
+v000001ab950b11f0_0 .net *"_ivl_33", 0 0, L_000001ab95112150;  1 drivers
+v000001ab950b06b0_0 .net *"_ivl_34", 15 0, L_000001ab95112dd0;  1 drivers
+v000001ab950af3f0_0 .net *"_ivl_40", 15 0, L_000001ab95113e10;  1 drivers
+v000001ab950b0750_0 .net *"_ivl_5", 0 0, L_000001ab951103c0;  1 drivers
+v000001ab950b07f0_0 .net *"_ivl_7", 0 0, L_000001ab95110c80;  1 drivers
+v000001ab950b0890_0 .net *"_ivl_9", 0 0, L_000001ab951117c0;  1 drivers
+v000001ab9508eb30_0 .net "data_in", 31 0, L_000001ab95111f40;  alias, 1 drivers
+v000001ab9510d260_0 .net "data_out", 31 0, L_000001ab95113370;  alias, 1 drivers
+v000001ab9510d300_0 .net "shift", 0 0, L_000001ab95113f50;  1 drivers
+v000001ab9510eac0_0 .net "shifted_data", 31 0, L_000001ab95112a10;  1 drivers
+L_000001ab95111720 .part L_000001ab95111f40, 31, 1;
+L_000001ab951103c0 .part L_000001ab95111f40, 31, 1;
+L_000001ab95110c80 .part L_000001ab95111f40, 31, 1;
+L_000001ab951117c0 .part L_000001ab95111f40, 31, 1;
+L_000001ab95110d20 .part L_000001ab95111f40, 31, 1;
+L_000001ab95110f00 .part L_000001ab95111f40, 31, 1;
+L_000001ab95111040 .part L_000001ab95111f40, 31, 1;
+L_000001ab95111860 .part L_000001ab95111f40, 31, 1;
+L_000001ab95112c90 .part L_000001ab95111f40, 31, 1;
+L_000001ab95113a50 .part L_000001ab95111f40, 31, 1;
+L_000001ab95112fb0 .part L_000001ab95111f40, 31, 1;
+L_000001ab95113230 .part L_000001ab95111f40, 31, 1;
+L_000001ab95112d30 .part L_000001ab95111f40, 31, 1;
+L_000001ab951134b0 .part L_000001ab95111f40, 31, 1;
+L_000001ab951123d0 .part L_000001ab95111f40, 31, 1;
+L_000001ab95112150 .part L_000001ab95111f40, 31, 1;
+LS_000001ab95112dd0_0_0 .concat [ 1 1 1 1], L_000001ab95112150, L_000001ab951123d0, L_000001ab951134b0, L_000001ab95112d30;
+LS_000001ab95112dd0_0_4 .concat [ 1 1 1 1], L_000001ab95113230, L_000001ab95112fb0, L_000001ab95113a50, L_000001ab95112c90;
+LS_000001ab95112dd0_0_8 .concat [ 1 1 1 1], L_000001ab95111860, L_000001ab95111040, L_000001ab95110f00, L_000001ab95110d20;
+LS_000001ab95112dd0_0_12 .concat [ 1 1 1 1], L_000001ab951117c0, L_000001ab95110c80, L_000001ab951103c0, L_000001ab95111720;
+L_000001ab95112dd0 .concat [ 4 4 4 4], LS_000001ab95112dd0_0_0, LS_000001ab95112dd0_0_4, LS_000001ab95112dd0_0_8, LS_000001ab95112dd0_0_12;
+L_000001ab95112a10 .concat8 [ 16 16 0 0], L_000001ab95113e10, L_000001ab95112dd0;
+L_000001ab95113e10 .part L_000001ab95111f40, 16, 16;
+S_000001ab950a2b00 .scope module, "pick_shifted_or_not" "mux_2" 6 13, 5 1 0, S_000001ab9504d4b0;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "out";
+    .port_info 1 /INPUT 1 "select";
+    .port_info 2 /INPUT 32 "in0";
+    .port_info 3 /INPUT 32 "in1";
+v000001ab950b1010_0 .net "in0", 31 0, L_000001ab95111f40;  alias, 1 drivers
+v000001ab950afa30_0 .net "in1", 31 0, L_000001ab95112a10;  alias, 1 drivers
+v000001ab950b0d90_0 .net "out", 31 0, L_000001ab95113370;  alias, 1 drivers
+v000001ab950afad0_0 .net "select", 0 0, L_000001ab95113f50;  alias, 1 drivers
+L_000001ab95113370 .functor MUXZ 32, L_000001ab95111f40, L_000001ab95112a10, L_000001ab95113f50, C4<>;
+S_000001ab950a2da0 .scope module, "shift_2" "sra_2" 3 13, 7 1 0, S_000001ab950b5980;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "data_out";
+    .port_info 1 /INPUT 32 "data_in";
+    .port_info 2 /INPUT 1 "shift";
+v000001ab9510e020_0 .net *"_ivl_12", 29 0, L_000001ab951101e0;  1 drivers
+v000001ab9510dbc0_0 .net *"_ivl_3", 0 0, L_000001ab95111cc0;  1 drivers
+v000001ab9510d3a0_0 .net *"_ivl_5", 0 0, L_000001ab95111220;  1 drivers
+v000001ab9510e0c0_0 .net *"_ivl_6", 1 0, L_000001ab95110be0;  1 drivers
+v000001ab9510ed40_0 .net "data_in", 31 0, L_000001ab95111c20;  alias, 1 drivers
+v000001ab9510eb60_0 .net "data_out", 31 0, L_000001ab95110780;  alias, 1 drivers
+v000001ab9510ec00_0 .net "shift", 0 0, L_000001ab951112c0;  1 drivers
+v000001ab9510da80_0 .net "shifted_data", 31 0, L_000001ab95111d60;  1 drivers
+L_000001ab95111cc0 .part L_000001ab95111c20, 31, 1;
+L_000001ab95111220 .part L_000001ab95111c20, 31, 1;
+L_000001ab95110be0 .concat [ 1 1 0 0], L_000001ab95111220, L_000001ab95111cc0;
+L_000001ab95111d60 .concat8 [ 30 2 0 0], L_000001ab951101e0, L_000001ab95110be0;
+L_000001ab951101e0 .part L_000001ab95111c20, 2, 30;
+S_000001ab950a13b0 .scope module, "pick_shifted_or_not" "mux_2" 7 12, 5 1 0, S_000001ab950a2da0;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "out";
+    .port_info 1 /INPUT 1 "select";
+    .port_info 2 /INPUT 32 "in0";
+    .port_info 3 /INPUT 32 "in1";
+v000001ab9510d800_0 .net "in0", 31 0, L_000001ab95111c20;  alias, 1 drivers
+v000001ab9510e160_0 .net "in1", 31 0, L_000001ab95111d60;  alias, 1 drivers
+v000001ab9510e840_0 .net "out", 31 0, L_000001ab95110780;  alias, 1 drivers
+v000001ab9510d760_0 .net "select", 0 0, L_000001ab951112c0;  alias, 1 drivers
+L_000001ab95110780 .functor MUXZ 32, L_000001ab95111c20, L_000001ab95111d60, L_000001ab951112c0, C4<>;
+S_000001ab950a1540 .scope module, "shift_4" "sra_4" 3 14, 8 1 0, S_000001ab950b5980;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "data_out";
+    .port_info 1 /INPUT 32 "data_in";
+    .port_info 2 /INPUT 1 "shift";
+v000001ab9510eca0_0 .net *"_ivl_10", 3 0, L_000001ab95110640;  1 drivers
+v000001ab9510e200_0 .net *"_ivl_16", 27 0, L_000001ab95110140;  1 drivers
+v000001ab9510d4e0_0 .net *"_ivl_3", 0 0, L_000001ab95110fa0;  1 drivers
+v000001ab9510e340_0 .net *"_ivl_5", 0 0, L_000001ab95111ae0;  1 drivers
+v000001ab9510e2a0_0 .net *"_ivl_7", 0 0, L_000001ab951108c0;  1 drivers
+v000001ab9510d120_0 .net *"_ivl_9", 0 0, L_000001ab95111e00;  1 drivers
+v000001ab9510d6c0_0 .net "data_in", 31 0, L_000001ab95110780;  alias, 1 drivers
+v000001ab9510db20_0 .net "data_out", 31 0, L_000001ab95110a00;  alias, 1 drivers
+v000001ab9510ede0_0 .net "shift", 0 0, L_000001ab95111360;  1 drivers
+v000001ab9510d620_0 .net "shifted_data", 31 0, L_000001ab95110960;  1 drivers
+L_000001ab95110fa0 .part L_000001ab95110780, 31, 1;
+L_000001ab95111ae0 .part L_000001ab95110780, 31, 1;
+L_000001ab951108c0 .part L_000001ab95110780, 31, 1;
+L_000001ab95111e00 .part L_000001ab95110780, 31, 1;
+L_000001ab95110640 .concat [ 1 1 1 1], L_000001ab95111e00, L_000001ab951108c0, L_000001ab95111ae0, L_000001ab95110fa0;
+L_000001ab95110960 .concat8 [ 28 4 0 0], L_000001ab95110140, L_000001ab95110640;
+L_000001ab95110140 .part L_000001ab95110780, 4, 28;
+S_000001ab950a16d0 .scope module, "pick_shifted_or_not" "mux_2" 8 12, 5 1 0, S_000001ab950a1540;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "out";
+    .port_info 1 /INPUT 1 "select";
+    .port_info 2 /INPUT 32 "in0";
+    .port_info 3 /INPUT 32 "in1";
+v000001ab9510d440_0 .net "in0", 31 0, L_000001ab95110780;  alias, 1 drivers
+v000001ab9510dda0_0 .net "in1", 31 0, L_000001ab95110960;  alias, 1 drivers
+v000001ab9510ef20_0 .net "out", 31 0, L_000001ab95110a00;  alias, 1 drivers
+v000001ab9510d580_0 .net "select", 0 0, L_000001ab95111360;  alias, 1 drivers
+L_000001ab95110a00 .functor MUXZ 32, L_000001ab95110780, L_000001ab95110960, L_000001ab95111360, C4<>;
+S_000001ab9509bde0 .scope module, "shift_8" "sra_8" 3 15, 9 1 0, S_000001ab950b5980;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "data_out";
+    .port_info 1 /INPUT 32 "data_in";
+    .port_info 2 /INPUT 1 "shift";
+v000001ab9510e3e0_0 .net *"_ivl_11", 0 0, L_000001ab951115e0;  1 drivers
+v000001ab9510d8a0_0 .net *"_ivl_13", 0 0, L_000001ab95110dc0;  1 drivers
+v000001ab9510e480_0 .net *"_ivl_15", 0 0, L_000001ab951106e0;  1 drivers
+v000001ab9510e660_0 .net *"_ivl_17", 0 0, L_000001ab95110320;  1 drivers
+v000001ab9510d9e0_0 .net *"_ivl_18", 7 0, L_000001ab95111680;  1 drivers
+v000001ab9510dc60_0 .net *"_ivl_24", 23 0, L_000001ab95111ea0;  1 drivers
+v000001ab9510dd00_0 .net *"_ivl_3", 0 0, L_000001ab951114a0;  1 drivers
+v000001ab9510de40_0 .net *"_ivl_5", 0 0, L_000001ab95111540;  1 drivers
+v000001ab9510e700_0 .net *"_ivl_7", 0 0, L_000001ab95110280;  1 drivers
+v000001ab9510dee0_0 .net *"_ivl_9", 0 0, L_000001ab95110aa0;  1 drivers
+v000001ab9510d080_0 .net "data_in", 31 0, L_000001ab95110a00;  alias, 1 drivers
+v000001ab9510df80_0 .net "data_out", 31 0, L_000001ab95111f40;  alias, 1 drivers
+v000001ab9510e7a0_0 .net "shift", 0 0, L_000001ab95110b40;  1 drivers
+v000001ab9510d1c0_0 .net "shifted_data", 31 0, L_000001ab951105a0;  1 drivers
+L_000001ab951114a0 .part L_000001ab95110a00, 31, 1;
+L_000001ab95111540 .part L_000001ab95110a00, 31, 1;
+L_000001ab95110280 .part L_000001ab95110a00, 31, 1;
+L_000001ab95110aa0 .part L_000001ab95110a00, 31, 1;
+L_000001ab951115e0 .part L_000001ab95110a00, 31, 1;
+L_000001ab95110dc0 .part L_000001ab95110a00, 31, 1;
+L_000001ab951106e0 .part L_000001ab95110a00, 31, 1;
+L_000001ab95110320 .part L_000001ab95110a00, 31, 1;
+LS_000001ab95111680_0_0 .concat [ 1 1 1 1], L_000001ab95110320, L_000001ab951106e0, L_000001ab95110dc0, L_000001ab951115e0;
+LS_000001ab95111680_0_4 .concat [ 1 1 1 1], L_000001ab95110aa0, L_000001ab95110280, L_000001ab95111540, L_000001ab951114a0;
+L_000001ab95111680 .concat [ 4 4 0 0], LS_000001ab95111680_0_0, LS_000001ab95111680_0_4;
+L_000001ab951105a0 .concat8 [ 24 8 0 0], L_000001ab95111ea0, L_000001ab95111680;
+L_000001ab95111ea0 .part L_000001ab95110a00, 8, 24;
+S_000001ab9509bf70 .scope module, "pick_shifted_or_not" "mux_2" 9 12, 5 1 0, S_000001ab9509bde0;
+ .timescale -9 -10;
+    .port_info 0 /OUTPUT 32 "out";
+    .port_info 1 /INPUT 1 "select";
+    .port_info 2 /INPUT 32 "in0";
+    .port_info 3 /INPUT 32 "in1";
+v000001ab9510e520_0 .net "in0", 31 0, L_000001ab95110a00;  alias, 1 drivers
+v000001ab9510d940_0 .net "in1", 31 0, L_000001ab951105a0;  alias, 1 drivers
+v000001ab9510e5c0_0 .net "out", 31 0, L_000001ab95111f40;  alias, 1 drivers
+v000001ab9510ee80_0 .net "select", 0 0, L_000001ab95110b40;  alias, 1 drivers
+L_000001ab95111f40 .functor MUXZ 32, L_000001ab95110a00, L_000001ab951105a0, L_000001ab95110b40, C4<>;
+    .scope S_000001ab950b57f0;
+T_0 ;
+    %pushi/vec4 0, 0, 32;
+    %store/vec4 v000001ab95111400_0, 0, 32;
+T_0.0 ;
+    %load/vec4 v000001ab95111400_0;
+    %cmpi/s 32, 0, 32;
+    %jmp/0xz T_0.1, 5;
+    %delay 200, 0;
+    %load/vec4 v000001ab95111a40_0;
+    %load/vec4 v000001ab95111b80_0;
+    %load/vec4 v000001ab95111400_0;
+    %ix/vec4 4;
+    %shiftr/s 4;
+    %cmp/e;
+    %jmp/0xz  T_0.2, 6;
+    %load/vec4 v000001ab95111b80_0;
+    %load/vec4 v000001ab95111400_0;
+    %ix/vec4 4;
+    %shiftr/s 4;
+    %vpi_call 2 20 "$display", "PASSED: data_in:%b, ctrl_shiftamt:%b, data_out:%b, expected:%b", v000001ab95111b80_0, v000001ab95111180_0, v000001ab95111a40_0, S<0,vec4,u32> {1 0 0};
+    %jmp T_0.3;
+T_0.2 ;
+    %load/vec4 v000001ab95111b80_0;
+    %load/vec4 v000001ab95111400_0;
+    %ix/vec4 4;
+    %shiftr/s 4;
+    %vpi_call 2 22 "$display", "FAILED: data_in:%b, ctrl_shiftamt:%b, data_out:%b, expected:%b", v000001ab95111b80_0, v000001ab95111180_0, v000001ab95111a40_0, S<0,vec4,u32> {1 0 0};
+T_0.3 ;
+    %load/vec4 v000001ab95111400_0;
+    %addi 1, 0, 32;
+    %store/vec4 v000001ab95111400_0, 0, 32;
+    %jmp T_0.0;
+T_0.1 ;
+    %vpi_call 2 25 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_000001ab950b57f0;
+T_1 ;
+    %vpi_call 2 29 "$dumpfile", "sra_barrel_shifter_wave.vcd" {0 0 0};
+    %vpi_call 2 30 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001ab950b57f0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 10;
+    "N/A";
+    "<interactive>";
+    "sra_barrel_shifter_tb.v";
+    "sra_barrel_shifter.v";
+    "sra_1.v";
+    "..\mux\mux_2.v";
+    "sra_16.v";
+    "sra_2.v";
+    "sra_4.v";
+    "sra_8.v";

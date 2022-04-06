@@ -1,0 +1,40 @@
+module decoder_5_to_32(out, in);
+    input [4:0] in;
+    output [31:0] out;
+
+    wire [4:0] not_in;
+    not_5bit NOT(in, not_in);
+
+    and AND0(out[0], not_in[4], not_in[3], not_in[2], not_in[1], not_in[0]);
+    and AND1(out[1], not_in[4], not_in[3], not_in[2], not_in[1], in[0]);
+    and AND2(out[2], not_in[4], not_in[3], not_in[2], in[1], not_in[0]);
+    and AND3(out[3], not_in[4], not_in[3], not_in[2], in[1], in[0]);
+    and AND4(out[4], not_in[4], not_in[3], in[2], not_in[1], not_in[0]);
+    and AND5(out[5], not_in[4], not_in[3], in[2], not_in[1], in[0]);
+    and AND6(out[6], not_in[4], not_in[3], in[2], in[1], not_in[0]);
+    and AND7(out[7], not_in[4], not_in[3], in[2], in[1], in[0]);
+    and AND8(out[8], not_in[4], in[3], not_in[2], not_in[1], not_in[0]);
+    and AND9(out[9], not_in[4], in[3], not_in[2], not_in[1], in[0]);
+    and AND10(out[10], not_in[4], in[3], not_in[2], in[1], not_in[0]);
+    and AND11(out[11], not_in[4], in[3], not_in[2], in[1], in[0]);
+    and AND12(out[12], not_in[4], in[3], in[2], not_in[1], not_in[0]);
+    and AND13(out[13], not_in[4], in[3], in[2], not_in[1], in[0]);
+    and AND14(out[14], not_in[4], in[3], in[2], in[1], not_in[0]);
+    and AND15(out[15], not_in[4], in[3], in[2], in[1], in[0]);
+    and AND16(out[16], in[4], not_in[3], not_in[2], not_in[1], not_in[0]);
+    and AND17(out[17], in[4], not_in[3], not_in[2], not_in[1], in[0]);
+    and AND18(out[18], in[4], not_in[3], not_in[2], in[1], not_in[0]);
+    and AND19(out[19], in[4], not_in[3], not_in[2], in[1], in[0]);
+    and AND20(out[20], in[4], not_in[3], in[2], not_in[1], not_in[0]);
+    and AND21(out[21], in[4], not_in[3], in[2], not_in[1], in[0]);
+    and AND22(out[22], in[4], not_in[3], in[2], in[1], not_in[0]);
+    and AND23(out[23], in[4], not_in[3], in[2], in[1], in[0]);
+    and AND24(out[24], in[4], in[3], not_in[2], not_in[1], not_in[0]);
+    and AND25(out[25], in[4], in[3], not_in[2], not_in[1], in[0]);
+    and AND26(out[26], in[4], in[3], not_in[2], in[1], not_in[0]);
+    and AND27(out[27], in[4], in[3], not_in[2], in[1], in[0]);
+    and AND28(out[28], in[4], in[3], in[2], not_in[1], not_in[0]);
+    and AND29(out[29], in[4], in[3], in[2], not_in[1], in[0]);
+    and AND30(out[30], in[4], in[3], in[2], in[1], not_in[0]);
+    and AND31(out[31], in[4], in[3], in[2], in[1], in[0]);
+endmodule

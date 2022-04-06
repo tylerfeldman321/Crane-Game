@@ -1,0 +1,6 @@
+carry_lookahead_adder.v
+carry_lookahead_adder_tb.v
+cla_8_bit_block.v
+full_adder_sum.v
+..\mux\mux_2.v
+not_32bit.v
