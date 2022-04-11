@@ -1,4 +1,4 @@
-module timer(input clock_100Mhz,
+module counter(input clock_100Mhz,
     input reset,
     output reg [15:0] count
     );
