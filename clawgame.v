@@ -3,8 +3,8 @@ module clawgame(
     input reset,
     input score_increment,
     output [7:0] anode_activate,
-    output [7:0] LED_out
-    );
+    output [7:0] LED_out,
+    output game_active);
 
     // input start_button;
     // output game_active;
@@ -13,7 +13,7 @@ module clawgame(
 
     // register buttonInputReg();
 
-    // reg game_active;
+    assign game_active = ~(time_left == 16'b0) && ~reset;
 
     wire [15:0] count, score_val;
     reg [15:0] score;
@@ -21,14 +21,14 @@ module clawgame(
     always @(posedge score_increment or posedge reset) begin
         if (reset == 1)
             score <= 0;
-        else
+        else if (game_active)
             score <= score + 1;
     end
-    
     assign score_val = score;
 
-    timer TIMER(clock, reset, count);
-    LED_display_controller LEDCONTROLLER(clock, reset, count, score_val, anode_activate, LED_out);
+    wire [15:0] time_left;
+    timer TIMER(clock, reset, time_left);
+    LED_display_controller LEDCONTROLLER(clock, reset, time_left, score_val, anode_activate, LED_out);
 
     // initial begin
     //     game_active = 0;
