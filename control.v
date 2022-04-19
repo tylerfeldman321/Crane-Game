@@ -9,8 +9,7 @@ module control(instruction,
                 write_data_mem_to_regfile, 
                 alu_opcode,
                 immediate_inALUB,
-                jr_read_reg,
-                increment_score);
+                jr_read_reg);
 
     input [31:0] instruction;
 
@@ -18,7 +17,6 @@ module control(instruction,
     output addi, mul, div;
     output sw, lw, j, bne, jal, jr, blt;
     output bex, setx;
-    output increment_score;
 
     output regfile_wren;
     output [4:0] write_reg, read_regA, read_regB;
@@ -41,7 +39,7 @@ module control(instruction,
     
 
     // ----- SPECIFIC SIGNALS -----
-    assign addi = ~opcode[4] & ~opcode[3] & opcode[2] & ~opcode[1] & opcode[0] || (increment_score);  // 00101
+    assign addi = ~opcode[4] & ~opcode[3] & opcode[2] & ~opcode[1] & opcode[0];  // 00101
     assign mul = r_type & ~r_type_alu_opcode[4] & ~r_type_alu_opcode[3] & r_type_alu_opcode[2] & r_type_alu_opcode[1] & ~r_type_alu_opcode[0];  // 00000 (00110)
     assign div = r_type & ~r_type_alu_opcode[4] & ~r_type_alu_opcode[3] & r_type_alu_opcode[2] & r_type_alu_opcode[1] & r_type_alu_opcode[0];  // 00000 (00111)
 
@@ -56,7 +54,6 @@ module control(instruction,
 
     assign bex = opcode[4] & ~opcode[3] & opcode[2] & opcode[1] & ~opcode[0];  // 10110
     assign setx = opcode[4] & ~opcode[3] & opcode[2] & ~opcode[1] & opcode[0];  // 10101
-    assign increment_score = ~opcode[4] & opcode[3] & ~opcode[2] & ~opcode[1] & opcode[0];  // 01001
 
     wire nop;
     assign nop = (instruction == 32'b00000000000000000000000000000000);

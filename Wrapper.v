@@ -25,13 +25,12 @@
  **/
 
 module Wrapper (clock, reset, score,
-	need_to_increment_score, finished_incrementing_score);
+	increment_score);
 
 	input clock, reset;
 	output [31:0] score;
 
-	input need_to_increment_score;
-	output finished_incrementing_score;
+	input increment_score;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -40,7 +39,7 @@ module Wrapper (clock, reset, score,
 		memAddr, memDataIn, memDataOut;
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "simple_test";
+	localparam INSTR_FILE = "clawgame_final";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -56,11 +55,7 @@ module Wrapper (clock, reset, score,
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
 		.data(memDataIn), .q_dmem(memDataOut),
-		
-		.need_to_increment_score(need_to_increment_score), 
-		.finished_incrementing_score(finished_incrementing_score),
-		.score(score)
-
+		.increment_score(increment_score)
 		); 
 	
 	// Instruction Memory (ROM)

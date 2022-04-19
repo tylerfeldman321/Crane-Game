@@ -16,6 +16,15 @@ module clawgame_proc_tb;
 		// Module to capture and what level, 0 means all wires
 		$dumpvars(0, clawgame_proc_tb);
 
+        #50 
+        increment_score = 1;
+
+        #200 
+        increment_score = 0;
+
+        #200 
+        increment_score = 1;
+
         #2000
         $finish;
     end
@@ -23,7 +32,6 @@ module clawgame_proc_tb;
     always
         #10 clock <= ~clock;
 
-    always
-        #100 increment_score <= ~increment_score;
+        
 
 endmodule

@@ -41,15 +41,11 @@ module processor(
     data_readRegA,                  // I: Data from port A of RegFile
     data_readRegB,                   // I: Data from port B of RegFile
 
-    need_to_increment_score, 
-    finished_incrementing_score,
-    score
+    increment_score
 	 
 	);
-	
-	input [31:0] score;
-	input need_to_increment_score;
-	output finished_incrementing_score;
+
+    input increment_score;
 
 	// Control signals
 	input clock, reset;
@@ -71,24 +67,70 @@ module processor(
 
 	/* YOUR CODE STARTS HERE */
 
+    // Breakdown of logic
+    // While in waiting area, stall the entire processor
+    // Once signal comes in, jump to the correct location, and stop stalling since PC now outside of waiting area
+    // Only want to jump while in waiting area, otherwise do not jump
+    // Will jump back on its own
+
+    wire [31:0] incrementing_score_pc, jumped_instruction;
+    assign incrementing_score_pc = 32'b00000000000000000000000000000111;  // 7
+
+    assign jumped_instruction[31:27] = 5'b00001;
+    assign jumped_instruction[26:0] = incrementing_score_pc[26:0];
+
+    wire any_button_on;
+    assign any_button_on = increment_score;
+
+    dffe_ref a_button_active_last(button_active_last, any_button_on, clock, 1'b1, 1'b0);
+    dffe_ref a_button_active_hold(button_active_hold, button_active_last, clock, 1'b1, 1'b0);
+    dffe_ref a_button_active(button_active, any_button_on, clock, 1'b1, button_active_hold);
+    wire [5:0] count;
+    counter COUNTER(count, clock & button_active, make_jump || (count[2] && count[1] && ~count[0]));
+
+    wire last_was_increment;
+    wire not_increment;
+    assign not_increment = 1'b0;
+    dffe_ref last_seen_score_increment(last_was_increment, increment_score, ~clock, increment_score && button_active, not_increment || (count[2] && ~count[1] && count[0]));
+
+    wire [31:0] waiting_lower_pc, waiting_upper_pc, incrementing_score_lower_pc, incrementing_score_upper_pc;
+    assign waiting_lower_pc = 32'd0;
+    assign waiting_upper_pc = 32'd6;
+    assign incrementing_score_lower_pc = 32'd7;
+    assign incrementing_score_upper_pc = 32'd14;
+
+    wire pc_in_incrementing_score, pc_in_waiting, button_stall;
+    assign pc_in_waiting = (PC >= waiting_lower_pc) && (PC <= waiting_upper_pc);
+    assign pc_in_incrementing_score = (PC >= incrementing_score_lower_pc) && (PC <= incrementing_score_upper_pc);
+    assign button_stall = ~button_active && (pc_in_incrementing_score) && ~X_j && ~(button_active_hold);
+
+    wire make_jump;
+    assign make_jump = button_active && (increment_score);
+
+    assign FD_IR_inserted = make_jump ? jumped_instruction : FD_IR;
+
+
+
+    // wire need_to_increment_score, need_to_increment_score_jump;
+    // dffe_ref dff_need_to_increment_score(need_to_increment_score, increment_score, ~clock, increment_score, ~waiting_for_input);  // Cleared once we jump somewhere else
+    // assign need_to_increment_score_jump = need_to_increment_score && ~last_was_increment;
+
     // iverilog -o proc -c FileList.txt -s Wrapper_tb -P Wrapper_tb.FILE=\"addi_basic\"
 
-    // module register(data_out, clk, data_in, write_enable, clr);
-    // module alu(data_operandA, data_operandB, ctrl_ALUopcode, ctrl_shiftamt, data_result, isNotEqual, isLessThan, overflow);
-
-    // TODO LIST
-    // DONE: Memory wo bypassing, jump, jal, bypassing into alu inputs, bypassing into memory, bne, blt, bypassing zero, stall logic
-    // TODO: jr, mult/div
-
-    
     // Stall logic
     // Write nop into D/X.IR (flush_DX), disable F/D latch and PC write enable
     wire stall;
-    assign stall = (X_lw & ((D_read_regA == X_write_reg) | ((D_read_regB == X_write_reg) & ~D_sw))) | multdiv_active | ready_to_write_multdiv_result;
+    assign stall = (X_lw & ((D_read_regA == X_write_reg) | ((D_read_regB == X_write_reg) & ~D_sw))) | multdiv_active | ready_to_write_multdiv_result | button_stall;
+
+    wire [31:0] new_PC, new_PC_temp1, new_PC_temp2, new_PC_temp3;
+    assign new_PC_temp1 = set_pc_to_j_target ? j_target_extended : PC_plus_1;
+    assign new_PC_temp2 = take_branch ? branch_PC : new_PC_temp1;
+    assign new_PC_temp3 = D_jr ? bypassed_jr : new_PC_temp2;
+    assign new_PC = make_jump ? incrementing_score_pc : new_PC_temp3;
 
 
     // Fetch: Create a PC and hook it up with the ROM.v module    
-    wire [31:0] PC, PC_plus_1, current_instruction, FD_PC, FD_IR, new_PC, new_PC_temp1, new_PC_temp2;
+    wire [31:0] PC, PC_plus_1, current_instruction, FD_PC, FD_IR;
     wire isNotEqual_PC_plus_1, isLessThan_PC_plus_1, overflow_PC_plus_1, PC_enable;
 
     assign PC_enable = ~stall;
@@ -96,7 +138,7 @@ module processor(
     assign address_imem = PC;
     assign current_instruction = q_imem;
 
-    wire F_basic_r_type, F_r_type, F_i_type, F_ji_type, F_jii_type, F_addi, F_mul, F_div, F_sw, F_lw, F_j, F_bne, F_jal, F_jr, F_blt, F_bex, F_setx, F_increment_score;
+    wire F_basic_r_type, F_r_type, F_i_type, F_ji_type, F_jii_type, F_addi, F_mul, F_div, F_sw, F_lw, F_j, F_bne, F_jal, F_jr, F_blt, F_bex, F_setx;
     wire F_regfile_wren, F_mem_wren, F_write_data_mem_to_regfile, F_immediate_inALUB;
     wire [4:0] F_alu_opcode, F_write_reg, F_read_regA, F_read_regB, F_jr_read_reg;
 
@@ -111,8 +153,7 @@ module processor(
                     F_write_data_mem_to_regfile, 
                     F_alu_opcode,
                     F_immediate_inALUB,
-                    F_jr_read_reg,
-                    F_increment_score);
+                    F_jr_read_reg);
 
 
     // Set Next PC
@@ -133,10 +174,6 @@ module processor(
     assign bypassed_jr_temp1 = bypass_jr_DX ? XM_O_in : jr_data;
     assign bypassed_jr_temp2 = bypass_B_XM ? XM_O : bypassed_jr_temp1;    
     assign bypassed_jr = bypass_B_MW ? data_writeReg : bypassed_jr_temp2;
-
-    assign new_PC_temp1 = set_pc_to_j_target ? j_target_extended : PC_plus_1;
-    assign new_PC_temp2 = take_branch ? branch_PC : new_PC_temp1;
-    assign new_PC = D_jr ? bypassed_jr : new_PC_temp2;
         
     // FD Latch
     wire flush_FD, enable_FD;
@@ -145,14 +182,14 @@ module processor(
     wire [31:0] FD_PC_in, FD_IR_in;
 
     assign FD_PC_in = flush_FD ? 32'b0 : PC_plus_1;
-    assign FD_IR_in = (flush_FD || ((F_increment_score && ~need_to_increment_score))) ? 32'b0 : current_instruction;
+    assign FD_IR_in = flush_FD ? 32'b0 : current_instruction;
 
     register FD_PC_reg(FD_PC, ~clock, FD_PC_in, enable_FD, reset);
     register FD_IR_reg(FD_IR, ~clock, FD_IR_in, enable_FD, reset);
 
 
     // ----- Decode: Parse the instruction and pass appropriate info to the Regfile.v -----
-    wire D_basic_r_type, D_r_type, D_i_type, D_ji_type, D_jii_type, D_addi, D_mul, D_div, D_sw, D_lw, D_j, D_bne, D_jal, D_jr, D_blt, D_bex, D_setx, D_increment_score;
+    wire D_basic_r_type, D_r_type, D_i_type, D_ji_type, D_jii_type, D_addi, D_mul, D_div, D_sw, D_lw, D_j, D_bne, D_jal, D_jr, D_blt, D_bex, D_setx;
     wire D_regfile_wren, D_mem_wren, D_write_data_mem_to_regfile, D_immediate_inALUB;
     wire [4:0] D_alu_opcode, D_write_reg, D_read_regA, D_read_regB, D_jr_read_reg;
 
@@ -167,10 +204,7 @@ module processor(
                     D_write_data_mem_to_regfile, 
                     D_alu_opcode,
                     D_immediate_inALUB,
-                    D_jr_read_reg,
-                    D_increment_score);
-
-    assign finished_incrementing_score = D_increment_score;
+                    D_jr_read_reg);
 
     assign ctrl_readRegA = D_read_regA;
     assign ctrl_readRegB = D_read_regB;
@@ -188,7 +222,7 @@ module processor(
     assign DX_PC_in = flush_DX ? 32'b0 : FD_PC;
     assign DX_A_in = flush_DX ? 32'b0 : data_A;
     assign DX_B_in = flush_DX ? 32'b0 : data_B;
-    assign DX_IR_in = flush_DX ? 32'b0 : FD_IR;
+    assign DX_IR_in = flush_DX ? 32'b0 : FD_IR_inserted;
 
     wire [31:0] DX_PC, DX_A, DX_B, DX_IR;
     register DX_PC_reg(DX_PC, ~clock, DX_PC_in, enable_DX, reset);  
@@ -199,7 +233,7 @@ module processor(
     
     // ----- Execute: Run the proper ALU inputs (for the basic arithmetic tests) -----
 
-    wire X_basic_r_type, X_r_type, X_i_type, X_ji_type, X_jii_type, X_addi, X_mul, X_div, X_sw, X_lw, X_j, X_bne, X_jal, X_jr, X_blt, X_bex, X_setx, X_increment_score;
+    wire X_basic_r_type, X_r_type, X_i_type, X_ji_type, X_jii_type, X_addi, X_mul, X_div, X_sw, X_lw, X_j, X_bne, X_jal, X_jr, X_blt, X_bex, X_setx;
     wire X_regfile_wren, X_mem_wren, X_write_data_mem_to_regfile, X_immediate_inALUB;
     wire [4:0] X_alu_opcode, X_write_reg, X_write_reg_temp, X_read_regA, X_read_regB, X_jr_read_reg;
 
@@ -214,8 +248,7 @@ module processor(
                     X_write_data_mem_to_regfile, 
                     X_alu_opcode,
                     X_immediate_inALUB,
-                    X_jr_read_reg,
-                    X_increment_score);
+                    X_jr_read_reg);
 
     // Bypassing A
     wire bypass_A_XM, bypass_A_MW;
@@ -299,7 +332,7 @@ module processor(
 
     // ----- Memory: Pass in the appropriate values to the RAM.v module (needed for lw and sw) -----
 
-    wire M_basic_r_type, M_r_type, M_i_type, M_ji_type, M_jii_type, M_addi, M_mul, M_div, M_sw, M_lw, M_j, M_bne, M_jal, M_jr, M_blt, M_bex, M_setx, M_increment_score;
+    wire M_basic_r_type, M_r_type, M_i_type, M_ji_type, M_jii_type, M_addi, M_mul, M_div, M_sw, M_lw, M_j, M_bne, M_jal, M_jr, M_blt, M_bex, M_setx;
     wire M_regfile_wren, M_mem_wren, M_write_data_mem_to_regfile, M_immediate_inALUB;
     wire [4:0] M_alu_opcode, M_write_reg_temp, M_write_reg, M_read_regA, M_read_regB, M_jr_read_reg;
 
@@ -314,8 +347,7 @@ module processor(
                     M_write_data_mem_to_regfile, 
                     M_alu_opcode,
                     M_immediate_inALUB,
-                    M_jr_read_reg,
-                    M_increment_score);
+                    M_jr_read_reg);
 
     // In case of overflow in last stage
     assign M_write_reg = XM_overflow ? 5'b11110 : M_write_reg_temp;
@@ -342,7 +374,7 @@ module processor(
     
     // ----- Writeback: Add the register to write to in regfile -----
 
-    wire W_basic_r_type, W_r_type, W_i_type, W_ji_type, W_jii_type, W_addi, W_mul, W_div, W_sw, W_lw, W_j, W_bne, W_jal, W_jr, W_blt, W_bex, W_setx, W_increment_score;
+    wire W_basic_r_type, W_r_type, W_i_type, W_ji_type, W_jii_type, W_addi, W_mul, W_div, W_sw, W_lw, W_j, W_bne, W_jal, W_jr, W_blt, W_bex, W_setx;
     wire W_regfile_wren, W_mem_wren, W_write_data_mem_to_regfile, W_immediate_inALUB;
     wire [4:0] W_alu_opcode, W_write_reg, W_write_reg_temp, W_write_reg_temp1, W_read_regA, W_read_regB, W_jr_read_reg;
 
@@ -357,20 +389,18 @@ module processor(
                     W_write_data_mem_to_regfile, 
                     W_alu_opcode,
                     W_immediate_inALUB,
-                    W_jr_read_reg,
-                    W_increment_score);
+                    W_jr_read_reg);
 
-    wire [31:0] data_writeReg_temp1, data_writeReg_temp2, data_writeReg_temp3;
+    wire [31:0] data_writeReg_temp1, data_writeReg_temp2;
 
     assign data_writeReg_temp1 = W_lw ? MW_D : MW_O;
     assign data_writeReg_temp2 = W_jal ? MW_PC : data_writeReg_temp1;
-    assign data_writeReg_temp3 = ready_to_write_multdiv_result ? final_multdiv_result : data_writeReg_temp2;
-    assign data_writeReg = W_increment_score ? score + 1 : data_writeReg_temp3;
+    assign data_writeReg = ready_to_write_multdiv_result ? final_multdiv_result : data_writeReg_temp2;
 
     assign ctrl_writeEnable = W_regfile_wren | ready_to_write_multdiv_result;
     assign W_write_reg_temp1 = ready_to_write_multdiv_result ? PW_write_reg : W_write_reg_temp;
     assign W_write_reg = MW_overflow ? 5'b11110 : W_write_reg_temp1;
-    assign ctrl_writeReg = W_increment_score ? 32'b00000000000000000000000000000011 : W_write_reg;
+    assign ctrl_writeReg = W_write_reg;
 
 
     // ----- PW Stage -----
@@ -380,7 +410,7 @@ module processor(
     wire [31:0] PW_P, PW_IR, PW_A, PW_B;
     register PW_IR_reg(PW_IR, ~clock, DX_IR, enable_PW, reset);
 
-    wire PW_basic_r_type, PW_r_type, PW_i_type, PW_ji_type, PW_jii_type, PW_addi, PW_mul, PW_div, PW_sw, PW_lw, PW_j, PW_bne, PW_jal, PW_jr, PW_blt, PW_bex, PW_setx, PW_increment_score;
+    wire PW_basic_r_type, PW_r_type, PW_i_type, PW_ji_type, PW_jii_type, PW_addi, PW_mul, PW_div, PW_sw, PW_lw, PW_j, PW_bne, PW_jal, PW_jr, PW_blt, PW_bex, PW_setx;
     wire PW_regfile_wren, PW_mem_wren, PW_write_data_mem_to_regfile, PW_immediate_inALUB;
     wire [4:0] PW_alu_opcode, PW_write_reg, PW_write_reg_temp, PW_read_regA, PW_read_regB, PW_jr_read_reg;
 
@@ -395,8 +425,7 @@ module processor(
                     PW_write_data_mem_to_regfile, 
                     PW_alu_opcode,
                     PW_immediate_inALUB,
-                    PW_jr_read_reg,
-                    PW_increment_score);
+                    PW_jr_read_reg);
 
     wire [31:0] multdiv_result;
     wire data_exception, data_resultRDY, ctrl_MULT, ctrl_DIV, multdiv_active, multdiv_active_test, PW_data_exception;

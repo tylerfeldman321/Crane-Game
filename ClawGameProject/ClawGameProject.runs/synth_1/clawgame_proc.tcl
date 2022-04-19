@@ -70,9 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param tcl.collectionResultDisplayLimit 0
-set_param chipscope.maxJobs 3
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -87,7 +84,10 @@ set_property ip_output_repo c:/Users/tyler/Documents/Spring2022/ECE350/final-pro
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem {{C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Test Files/Memory Files/addi_loop_test.mem}}
+read_mem {
+  {C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Test Files/Memory Files/addi_loop_test.mem}
+  C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_final.mem
+}
 read_verilog -library xil_defaultlib {
   C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Display/LED_display_controller.v
   C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/RAM.v
@@ -98,7 +98,6 @@ read_verilog -library xil_defaultlib {
   C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/carry_lookahead_adder.v
   C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/cla_8_bit_block.v
   C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v
-  C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v
   C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/decoder_5_to_32.v
   C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/dffe_ref.v
   {C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/divider.v}
