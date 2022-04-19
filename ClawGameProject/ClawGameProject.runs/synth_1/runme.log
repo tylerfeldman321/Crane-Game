@@ -1,0 +1,487 @@
+
+*** Running vivado
+    with args -log clawgame_proc.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source clawgame_proc.tcl
+
+
+
+****** Vivado v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source clawgame_proc.tcl -notrace
+Command: synth_design -top clawgame_proc -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 8308
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:36]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:36]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:36]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:36]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:36]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:44]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:44]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:44]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:44]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:44]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:45]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:45]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:45]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:45]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:45]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:46]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:46]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:46]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:46]
+WARNING: [Synth 8-6901] identifier 'r_type_alu_opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:46]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:48]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:48]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:48]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:48]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:48]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:49]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:49]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:49]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:49]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:49]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:51]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:51]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:51]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:51]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:51]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:52]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:52]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:52]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:52]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:52]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:53]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:53]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:53]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:53]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:53]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:54]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:54]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:54]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:54]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:54]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:55]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:55]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:55]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:55]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:55]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:57]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:57]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:57]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:57]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:57]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:58]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:58]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:58]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:58]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:58]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:59]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:59]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:59]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:59]
+WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:59]
+WARNING: [Synth 8-6901] identifier 'X_lw' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'D_read_regA' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'X_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'D_read_regB' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'X_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'D_sw' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'multdiv_active' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'ready_to_write_multdiv_result' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:87]
+WARNING: [Synth 8-6901] identifier 'D_read_regB' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:129]
+WARNING: [Synth 8-6901] identifier 'X_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:129]
+WARNING: [Synth 8-6901] identifier 'X_regfile_wren' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:129]
+WARNING: [Synth 8-6901] identifier 'X_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:129]
+WARNING: [Synth 8-6901] identifier 'D_read_regB' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:130]
+WARNING: [Synth 8-6901] identifier 'M_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:130]
+WARNING: [Synth 8-6901] identifier 'M_regfile_wren' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:130]
+WARNING: [Synth 8-6901] identifier 'M_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:130]
+WARNING: [Synth 8-6901] identifier 'D_read_regB' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:131]
+WARNING: [Synth 8-6901] identifier 'W_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:131]
+WARNING: [Synth 8-6901] identifier 'W_regfile_wren' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:131]
+WARNING: [Synth 8-6901] identifier 'W_write_reg' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:131]
+WARNING: [Synth 8-6901] identifier 'XM_O_in' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:133]
+WARNING: [Synth 8-6901] identifier 'bypass_B_XM' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:134]
+WARNING: [Synth 8-6901] identifier 'XM_O' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:134]
+WARNING: [Synth 8-6901] identifier 'bypass_B_MW' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:135]
+WARNING: [Synth 8-6901] identifier 'take_branch' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:138]
+WARNING: [Synth 8-6901] identifier 'branch_PC' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:138]
+WARNING: [Synth 8-6901] identifier 'D_jr' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:139]
+WARNING: [Synth 8-6901] identifier 'take_branch' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:144]
+WARNING: [Synth 8-6901] identifier 'D_jr' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:144]
+WARNING: [Synth 8-6901] identifier 'take_branch' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:185]
+INFO: [Common 17-14] Message 'Synth 8-6901' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-992] need_to_increment_score_wire is already implicitly declared earlier [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_proc.v:29]
+WARNING: [Synth 8-992] finished_incrementing_score is already implicitly declared earlier [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_proc.v:32]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1014.816 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'clawgame_proc' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_proc.v:1]
+INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Wrapper.v:27]
+	Parameter INSTR_FILE bound to: addi_loop_test - type: string 
+INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'register' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dffe_ref' (1#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'register' (2#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/register.v:1]
+INFO: [Synth 8-6157] synthesizing module 'control' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'control' (3#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:1]
+INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_barrel_shifter' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_barrel_shifter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_1' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_1.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_2' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2' (4#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_1' (5#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_1.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_2' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_2' (6#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_4' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_4' (7#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_8' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_8' (8#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sll_16' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_16' (9#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_barrel_shifter' (10#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_barrel_shifter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_barrel_shifter' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_barrel_shifter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_1' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_1.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_1' (11#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_1.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_2' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_2' (12#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_2.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_4' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_4' (13#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_4.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_8' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_8' (14#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'sra_16' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_16' (15#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_barrel_shifter' (16#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_barrel_shifter.v:1]
+INFO: [Synth 8-6157] synthesizing module 'carry_lookahead_adder' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/carry_lookahead_adder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'xor_32bit_w_1bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/xor_32bit_w_1bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'xor_32bit_w_1bit' (17#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/xor_32bit_w_1bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cla_8_bit_block' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/cla_8_bit_block.v:1]
+INFO: [Synth 8-6157] synthesizing module 'full_adder_sum' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/full_adder_sum.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'full_adder_sum' (18#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/full_adder_sum.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cla_8_bit_block' (19#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/cla_8_bit_block.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'carry_lookahead_adder' (20#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/carry_lookahead_adder.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_8' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_8.v:1]
+INFO: [Synth 8-6157] synthesizing module 'mux_4' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4' (21#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8' (22#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (23#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/alu.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multdiv' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multdiv.v:1]
+INFO: [Synth 8-6157] synthesizing module 'multiplier' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multiplier.v:1]
+WARNING: [Synth 8-6090] variable 'P' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multiplier.v:52]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (24#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multiplier.v:1]
+INFO: [Synth 8-6157] synthesizing module 'divider' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'divider' (25#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multdiv' (26#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multdiv.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'processor' (27#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:20]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ROM.v:2]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 12 - type: integer 
+	Parameter DEPTH bound to: 4096 - type: integer 
+	Parameter MEMFILE bound to: 144'b011000010110010001100100011010010101111101101100011011110110111101110000010111110111010001100101011100110111010000101110011011010110010101101101 
+INFO: [Synth 8-3876] $readmem data file 'addi_loop_test.mem' is read successfully [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ROM.v:11]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (28#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ROM.v:2]
+INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'decoder_5_to_32' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/decoder_5_to_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'not_5bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/not_5bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'not_5bit' (29#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/not_5bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_5_to_32' (30#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/decoder_5_to_32.v:1]
+INFO: [Synth 8-6157] synthesizing module 'and_32bit_w_1bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/and_32bit_w_1bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'and_32bit_w_1bit' (31#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/and_32bit_w_1bit.v:1]
+INFO: [Synth 8-6157] synthesizing module 'select_read_value' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/select_read_value.v:1]
+INFO: [Synth 8-6157] synthesizing module 'tristate_buffer_32bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/tristate_buffer_32bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'tristate_buffer_32bit' (32#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/tristate_buffer_32bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'select_read_value' (33#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/select_read_value.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (34#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/regfile.v:1]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/RAM.v:2]
+	Parameter DATA_WIDTH bound to: 32 - type: integer 
+	Parameter ADDRESS_WIDTH bound to: 12 - type: integer 
+	Parameter DEPTH bound to: 4096 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (35#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (36#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Wrapper.v:27]
+INFO: [Synth 8-6157] synthesizing module 'debouncer' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_div' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div' (37#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:14]
+INFO: [Synth 8-6157] synthesizing module 'dff' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dff' (38#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'debouncer' (39#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'timer' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Timing/timer.v:1]
+	Parameter START_TIME bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'timer' (40#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Timing/timer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'LED_display_controller' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Display/LED_display_controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'LED_display_controller' (41#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Display/LED_display_controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clawgame_proc' (42#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_proc.v:1]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1014.816 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.816 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.816 ; gain = 0.000
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.201 . Memory (MB): peak = 1014.816 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame.xdc]
+Finished Parsing XDC File [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/clawgame_proc_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/clawgame_proc_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1026.352 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.030 . Memory (MB): peak = 1026.352 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1026.352 ; gain = 11.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1026.352 ; gain = 11.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1026.352 ; gain = 11.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1026.352 ; gain = 11.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   65 Bit       Adders := 2     
+	   3 Input   64 Bit       Adders := 1     
+	   2 Input   32 Bit       Adders := 2     
+	   2 Input    6 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 109   
+	   3 Input      1 Bit         XORs := 96    
++---Registers : 
+	               65 Bit    Registers := 3     
+	               64 Bit    Registers := 3     
+	               32 Bit    Registers := 3     
+	               16 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                1 Bit    Registers := 1584  
++---Multipliers : 
+	              32x32  Multipliers := 1     
++---RAMs : 
+	             128K Bit	(4096 X 32 bit)          RAMs := 1     
++---ROMs : 
+	                    ROMs := 1     
++---Muxes : 
+	   2 Input   65 Bit        Muxes := 4     
+	   3 Input   65 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 2     
+	   2 Input   32 Bit        Muxes := 81    
+	   8 Input    8 Bit        Muxes := 1     
+	   2 Input    6 Bit        Muxes := 2     
+	   3 Input    6 Bit        Muxes := 1     
+	   2 Input    5 Bit        Muxes := 42    
+	   2 Input    3 Bit        Muxes := 1     
+	   4 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 15    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP mult/real_prod0, operation Mode is: A*B.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: Generating DSP mult/real_prod_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult/real_prod_reg is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+DSP Report: Generating DSP mult/real_prod0, operation Mode is: A*B.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod0.
+DSP Report: Generating DSP mult/real_prod_reg, operation Mode is: (PCIN>>17)+A*B.
+DSP Report: register mult/real_prod_reg is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:40 ; elapsed = 00:01:41 . Memory (MB): peak = 1026.352 ; gain = 11.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping	Report
++--------------+-----------------------------+---------------+----------------+
+|Module Name   | RTL Object                  | Depth x Width | Implemented As | 
++--------------+-----------------------------+---------------+----------------+
+|clawgame_proc | WRAPPER/InstMem/dataOut_reg | 4096x10       | Block RAM      | 
++--------------+-----------------------------+---------------+----------------+
+
+
+DSP: Preliminary Mapping	Report (see note below)
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name | DSP Mapping    | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|multdiv     | A*B            | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multdiv     | (PCIN>>17)+A*B | 15     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|multdiv     | A*B            | 18     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|multdiv     | (PCIN>>17)+A*B | 18     | 15     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++------------+----------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:47 ; elapsed = 00:01:49 . Memory (MB): peak = 1026.352 ; gain = 11.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:18 ; elapsed = 00:02:19 . Memory (MB): peak = 1100.895 ; gain = 86.078
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance WRAPPER/InstMem/dataOut_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance WRAPPER/InstMem/dataOut_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:20 ; elapsed = 00:02:21 . Memory (MB): peak = 1174.863 ; gain = 160.047
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 1179.672 ; gain = 164.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 1179.672 ; gain = 164.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 1179.672 ; gain = 164.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:24 ; elapsed = 00:02:25 . Memory (MB): peak = 1179.672 ; gain = 164.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:24 ; elapsed = 00:02:26 . Memory (MB): peak = 1179.672 ; gain = 164.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:24 ; elapsed = 00:02:26 . Memory (MB): peak = 1179.672 ; gain = 164.855
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     2|
+|2     |CARRY4   |   104|
+|3     |LUT1     |    40|
+|4     |LUT2     |   538|
+|5     |LUT3     |   239|
+|6     |LUT4     |   321|
+|7     |LUT5     |   267|
+|8     |LUT6     |   976|
+|9     |RAMB18E1 |     1|
+|10    |RAMB36E1 |     1|
+|11    |FDCE     |   871|
+|12    |FDPE     |     2|
+|13    |FDRE     |    16|
+|14    |IBUF     |     2|
+|15    |OBUF     |    16|
++------+---------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:24 ; elapsed = 00:02:26 . Memory (MB): peak = 1179.672 ; gain = 164.855
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:13 ; elapsed = 00:02:22 . Memory (MB): peak = 1179.672 ; gain = 153.320
+Synthesis Optimization Complete : Time (s): cpu = 00:02:24 ; elapsed = 00:02:26 . Memory (MB): peak = 1179.672 ; gain = 164.855
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1179.672 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 106 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1179.672 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+103 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:30 ; elapsed = 00:02:33 . Memory (MB): peak = 1179.672 ; gain = 164.855
+INFO: [Common 17-600] The following parameters have non-default value.
+tcl.collectionResultDisplayLimit
+INFO: [Common 17-1381] The checkpoint 'C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ClawGameProject/ClawGameProject.runs/synth_1/clawgame_proc.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file clawgame_proc_utilization_synth.rpt -pb clawgame_proc_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 19 07:43:22 2022...

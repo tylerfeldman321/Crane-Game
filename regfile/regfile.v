@@ -2,7 +2,8 @@ module regfile (
 	clock,
 	ctrl_writeEnable, ctrl_reset, ctrl_writeReg,
 	ctrl_readRegA, ctrl_readRegB, data_writeReg,
-	data_readRegA, data_readRegB
+	data_readRegA, data_readRegB,
+	score
 );
 
 	input clock, ctrl_writeEnable, ctrl_reset;
@@ -10,6 +11,9 @@ module regfile (
 	input [31:0] data_writeReg;
 
 	output [31:0] data_readRegA, data_readRegB;
+	
+	output [31:0] score;
+	assign score = data_reg3;
 
 	// add your code here
 

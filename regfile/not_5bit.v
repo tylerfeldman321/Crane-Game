@@ -8,4 +8,4 @@ module not_5bit(in, out);
     not NOT3(out[3], in[3]);
     not NOT4(out[4], in[4]);
 
-endmodule;
+endmodule

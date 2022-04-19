@@ -52,6 +52,8 @@ module Wrapper_tb #(parameter FILE = "nop");
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
 
+	wire [31:0] time_left;
+
 	// Wires for Test Harness
 	wire[4:0] rs1_test, rs1_in;
 	reg testMode = 0; 
@@ -105,7 +107,7 @@ module Wrapper_tb #(parameter FILE = "nop");
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1_in), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB), .timeLeft(time_left));
 						
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 

@@ -1,0 +1,78 @@
+Cycle   4: Wrote 1 into register 1
+Cycle   5: Wrote 20 into register 10
+Cycle   6: Wrote 10000 into register 11
+Cycle   7: Wrote 9999 into register 11
+Cycle  13: Wrote 9998 into register 11
+Cycle  19: Wrote 9997 into register 11
+Cycle  25: Wrote 9996 into register 11
+Cycle  31: Wrote 9995 into register 11
+Cycle  37: Wrote 9994 into register 11
+Cycle  43: Wrote 9993 into register 11
+Cycle  49: Wrote 9992 into register 11
+Cycle  55: Wrote 9991 into register 11
+Cycle  61: Wrote 9990 into register 11
+Cycle  67: Wrote 9989 into register 11
+Cycle  73: Wrote 9988 into register 11
+Cycle  79: Wrote 9987 into register 11
+Cycle  85: Wrote 9986 into register 11
+Cycle  91: Wrote 9985 into register 11
+Cycle  97: Wrote 9984 into register 11
+Cycle 103: Wrote 9983 into register 11
+Cycle 109: Wrote 9982 into register 11
+Cycle 115: Wrote 9981 into register 11
+Cycle 121: Wrote 9980 into register 11
+Cycle 127: Wrote 9979 into register 11
+Cycle 133: Wrote 9978 into register 11
+Cycle 139: Wrote 9977 into register 11
+Cycle 145: Wrote 9976 into register 11
+Cycle 151: Wrote 9975 into register 11
+Cycle 157: Wrote 9974 into register 11
+Cycle 163: Wrote 9973 into register 11
+Cycle 169: Wrote 9972 into register 11
+Cycle 175: Wrote 9971 into register 11
+Cycle 181: Wrote 9970 into register 11
+Cycle 187: Wrote 9969 into register 11
+Cycle 193: Wrote 9968 into register 11
+Cycle 199: Wrote 9967 into register 11
+Cycle 205: Wrote 9966 into register 11
+Cycle 211: Wrote 9965 into register 11
+Cycle 217: Wrote 9964 into register 11
+Cycle 223: Wrote 9963 into register 11
+Cycle 229: Wrote 9962 into register 11
+Cycle 235: Wrote 9961 into register 11
+Cycle 241: Wrote 9960 into register 11
+Cycle 247: Wrote 9959 into register 11
+Cycle 253: Wrote 9958 into register 11
+============== Testing Mode ==============
+Reg  0:           0
+Reg  1:           1
+Reg  2:           0
+Reg  3:           0
+Reg  4:           0
+Reg  5:           0
+Reg  6:           0
+Reg  7:           0
+Reg  8:           0
+Reg  9:           0
+Reg 10:          20
+Reg 11:        9958
+Reg 12:           0
+Reg 13:           0
+Reg 14:           0
+Reg 15:           0
+Reg 16:           0
+Reg 17:           0
+Reg 18:           0
+Reg 19:           0
+Reg 20:           0
+Reg 21:           0
+Reg 22:           0
+Reg 23:           0
+Reg 24:           0
+Reg 25:           0
+Reg 26:           0
+Reg 27:           0
+Reg 28:           0
+Reg 29:           0
+Reg 30:           0
+Reg 31:           0

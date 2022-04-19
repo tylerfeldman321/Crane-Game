@@ -1,4 +1,4 @@
-module clawgame(
+module clawgame_proc(
     input clock, 
     input reset,
     input score_increment,
@@ -18,7 +18,10 @@ module clawgame(
     wire [15:0] count, score_val;
     reg [15:0] score;
 
-    always @(posedge score_increment or posedge reset) begin
+    wire score_increment_debounced;
+    debouncer score_increment_debouncer(score_increment, clock, score_increment_debounced);
+    
+    always @(posedge score_increment_debounced or posedge reset) begin
         if (reset == 1)
             score <= 0;
         else if (game_active)

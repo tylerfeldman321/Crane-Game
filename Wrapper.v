@@ -24,8 +24,14 @@
  *
  **/
 
-module Wrapper (clock, reset);
+module Wrapper (clock, reset, score,
+	need_to_increment_score, finished_incrementing_score);
+
 	input clock, reset;
+	output [31:0] score;
+
+	input need_to_increment_score;
+	output finished_incrementing_score;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -33,9 +39,8 @@ module Wrapper (clock, reset);
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
 
-
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "";
+	localparam INSTR_FILE = "simple_test";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -50,7 +55,13 @@ module Wrapper (clock, reset);
 									
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
-		.data(memDataIn), .q_dmem(memDataOut)); 
+		.data(memDataIn), .q_dmem(memDataOut),
+		
+		.need_to_increment_score(need_to_increment_score), 
+		.finished_incrementing_score(finished_incrementing_score),
+		.score(score)
+
+		); 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))
@@ -63,7 +74,8 @@ module Wrapper (clock, reset);
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
+		.score(score));
 						
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 

@@ -9,4 +9,4 @@ module register(data_out, clk, data_in, write_enable, clr);
             dffe_ref dff(.q(data_out[i]), .d(data_in[i]), .clk(clk), .en(write_enable), .clr(clr));
         end
     endgenerate
-endmodule;
+endmodule

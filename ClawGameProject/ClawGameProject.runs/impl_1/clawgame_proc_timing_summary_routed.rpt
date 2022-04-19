@@ -1,0 +1,1547 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
+| Date         : Tue Apr 19 07:46:15 2022
+| Host         : DESKTOP-IOM2HT6 running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -file clawgame_proc_timing_summary_routed.rpt -pb clawgame_proc_timing_summary_routed.pb -rpx clawgame_proc_timing_summary_routed.rpx -warn_on_violation
+| Design       : clawgame_proc
+| Device       : 7a100t-csg324
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (16)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (16)
+5. checking no_input_delay (1)
+6. checking no_output_delay (15)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (16)
+-------------------------
+ There are 16 register/latch pins with no clock driven by root clock pin: TIMER/count_reg[0]/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (16)
+-------------------------------------------------
+ There are 16 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (1)
+------------------------------
+ There is 1 input port with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (15)
+--------------------------------
+ There are 15 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+     -2.325     -301.816                    221                 1396        0.150        0.000                      0                 1396        4.500        0.000                       0                   879  
+
+
+Timing constraints are not met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock        Waveform(ns)       Period(ns)      Frequency(MHz)
+-----        ------------       ----------      --------------
+sys_clk_pin  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+sys_clk_pin        -2.325     -301.816                    221                 1396        0.150        0.000                      0                 1396        4.500        0.000                       0                   879  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  sys_clk_pin
+  To Clock:  sys_clk_pin
+
+Setup :          221  Failing Endpoints,  Worst Slack       -2.325ns,  Total Violation     -301.816ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.150ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.500ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (VIOLATED) :        -2.325ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[12].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.270ns  (logic 2.071ns (16.879%)  route 10.199ns (83.121%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.052ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.902ns = ( 19.902 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          0.657    21.162    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_reg_2
+    SLICE_X42Y124        LUT6 (Prop_lut6_I3_O)        0.124    21.286 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_5__56/O
+                         net (fo=25, routed)          1.073    22.359    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_76
+    SLICE_X51Y123        LUT6 (Prop_lut6_I4_O)        0.124    22.483 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_1__11/O
+                         net (fo=1, routed)           0.000    22.483    WRAPPER/CPU/PC_reg/loop1[12].dff/q_reg_2
+    SLICE_X51Y123        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[12].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.480    19.902    WRAPPER/CPU/PC_reg/loop1[12].dff/clk0
+    SLICE_X51Y123        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[12].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.161    
+                         clock uncertainty           -0.035    20.126    
+    SLICE_X51Y123        FDCE (Setup_fdce_C_D)        0.032    20.158    WRAPPER/CPU/PC_reg/loop1[12].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.158    
+                         arrival time                         -22.483    
+  -------------------------------------------------------------------
+                         slack                                 -2.325    
+
+Slack (VIOLATED) :        -2.228ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[29].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.175ns  (logic 2.071ns (17.010%)  route 10.104ns (82.990%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.050ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.904ns = ( 19.904 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          1.043    21.548    WRAPPER/CPU/DX_IR_reg/loop1[20].dff/q_reg_10
+    SLICE_X42Y123        LUT6 (Prop_lut6_I3_O)        0.124    21.672 f  WRAPPER/CPU/DX_IR_reg/loop1[20].dff/q_i_2__48/O
+                         net (fo=1, routed)           0.592    22.264    WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg_41
+    SLICE_X45Y125        LUT6 (Prop_lut6_I3_O)        0.124    22.388 r  WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_i_1__29/O
+                         net (fo=1, routed)           0.000    22.388    WRAPPER/CPU/PC_reg/loop1[29].dff/q_reg_2
+    SLICE_X45Y125        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[29].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.482    19.904    WRAPPER/CPU/PC_reg/loop1[29].dff/clk0
+    SLICE_X45Y125        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[29].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.163    
+                         clock uncertainty           -0.035    20.128    
+    SLICE_X45Y125        FDCE (Setup_fdce_C_D)        0.032    20.160    WRAPPER/CPU/PC_reg/loop1[29].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.160    
+                         arrival time                         -22.388    
+  -------------------------------------------------------------------
+                         slack                                 -2.228    
+
+Slack (VIOLATED) :        -2.187ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[23].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.133ns  (logic 2.071ns (17.069%)  route 10.062ns (82.931%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.050ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.904ns = ( 19.904 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 f  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          0.988    21.494    WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_reg_43
+    SLICE_X43Y127        LUT6 (Prop_lut6_I3_O)        0.124    21.618 r  WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_i_4__61/O
+                         net (fo=1, routed)           0.605    22.223    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_reg_23
+    SLICE_X43Y124        LUT6 (Prop_lut6_I2_O)        0.124    22.347 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_1__21/O
+                         net (fo=1, routed)           0.000    22.347    WRAPPER/CPU/PC_reg/loop1[23].dff/q_reg_1
+    SLICE_X43Y124        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[23].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.482    19.904    WRAPPER/CPU/PC_reg/loop1[23].dff/clk0
+    SLICE_X43Y124        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[23].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.163    
+                         clock uncertainty           -0.035    20.128    
+    SLICE_X43Y124        FDCE (Setup_fdce_C_D)        0.032    20.160    WRAPPER/CPU/PC_reg/loop1[23].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.160    
+                         arrival time                         -22.347    
+  -------------------------------------------------------------------
+                         slack                                 -2.187    
+
+Slack (VIOLATED) :        -2.169ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[17].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.121ns  (logic 2.071ns (17.086%)  route 10.050ns (82.914%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.045ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.909ns = ( 19.909 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.696    18.807    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X43Y126        LUT6 (Prop_lut6_I3_O)        0.124    18.931 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_9/O
+                         net (fo=1, routed)           0.670    19.602    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_2__77_1
+    SLICE_X43Y126        LUT6 (Prop_lut6_I0_O)        0.124    19.726 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_4__10/O
+                         net (fo=1, routed)           0.596    20.322    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_4__10_n_0
+    SLICE_X44Y124        LUT6 (Prop_lut6_I1_O)        0.124    20.446 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_2__77/O
+                         net (fo=143, routed)         1.066    21.511    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_14
+    SLICE_X41Y122        LUT6 (Prop_lut6_I3_O)        0.124    21.635 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_2__38_comp/O
+                         net (fo=1, routed)           0.575    22.210    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_reg_12
+    SLICE_X41Y123        LUT6 (Prop_lut6_I0_O)        0.124    22.334 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_1__18/O
+                         net (fo=1, routed)           0.000    22.334    WRAPPER/CPU/PC_reg/loop1[17].dff/q_reg_3
+    SLICE_X41Y123        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[17].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.487    19.909    WRAPPER/CPU/PC_reg/loop1[17].dff/clk0
+    SLICE_X41Y123        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[17].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.168    
+                         clock uncertainty           -0.035    20.133    
+    SLICE_X41Y123        FDCE (Setup_fdce_C_D)        0.032    20.165    WRAPPER/CPU/PC_reg/loop1[17].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.165    
+                         arrival time                         -22.334    
+  -------------------------------------------------------------------
+                         slack                                 -2.169    
+
+Slack (VIOLATED) :        -2.157ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[21].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.106ns  (logic 2.071ns (17.107%)  route 10.035ns (82.893%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.047ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.907ns = ( 19.907 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          0.657    21.162    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_reg_2
+    SLICE_X42Y124        LUT6 (Prop_lut6_I3_O)        0.124    21.286 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_5__56/O
+                         net (fo=25, routed)          0.910    22.196    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_76
+    SLICE_X45Y127        LUT6 (Prop_lut6_I4_O)        0.124    22.320 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_1__25/O
+                         net (fo=1, routed)           0.000    22.320    WRAPPER/CPU/PC_reg/loop1[21].dff/q_reg_2
+    SLICE_X45Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[21].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.485    19.907    WRAPPER/CPU/PC_reg/loop1[21].dff/clk0
+    SLICE_X45Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[21].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.166    
+                         clock uncertainty           -0.035    20.131    
+    SLICE_X45Y127        FDCE (Setup_fdce_C_D)        0.032    20.163    WRAPPER/CPU/PC_reg/loop1[21].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.163    
+                         arrival time                         -22.320    
+  -------------------------------------------------------------------
+                         slack                                 -2.157    
+
+Slack (VIOLATED) :        -2.153ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[16].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.151ns  (logic 2.071ns (17.044%)  route 10.080ns (82.956%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.905ns = ( 19.905 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 f  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          0.930    21.436    WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_reg_43
+    SLICE_X46Y127        LUT6 (Prop_lut6_I3_O)        0.124    21.560 r  WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_i_4__54/O
+                         net (fo=1, routed)           0.680    22.240    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_93
+    SLICE_X46Y127        LUT6 (Prop_lut6_I2_O)        0.124    22.364 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_1__7/O
+                         net (fo=1, routed)           0.000    22.364    WRAPPER/CPU/PC_reg/loop1[16].dff/q_reg_3
+    SLICE_X46Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[16].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.483    19.905    WRAPPER/CPU/PC_reg/loop1[16].dff/clk0
+    SLICE_X46Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[16].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.164    
+                         clock uncertainty           -0.035    20.129    
+    SLICE_X46Y127        FDCE (Setup_fdce_C_D)        0.082    20.211    WRAPPER/CPU/PC_reg/loop1[16].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.211    
+                         arrival time                         -22.364    
+  -------------------------------------------------------------------
+                         slack                                 -2.153    
+
+Slack (VIOLATED) :        -2.140ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[7].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.089ns  (logic 2.071ns (17.131%)  route 10.018ns (82.869%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.905ns = ( 19.905 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 f  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          1.001    21.507    WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_reg_43
+    SLICE_X48Y128        LUT6 (Prop_lut6_I3_O)        0.124    21.631 r  WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_i_4__45/O
+                         net (fo=1, routed)           0.548    22.179    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_83
+    SLICE_X49Y127        LUT6 (Prop_lut6_I2_O)        0.124    22.303 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_1__2/O
+                         net (fo=1, routed)           0.000    22.303    WRAPPER/CPU/PC_reg/loop1[7].dff/q_reg_7
+    SLICE_X49Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[7].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.483    19.905    WRAPPER/CPU/PC_reg/loop1[7].dff/clk0
+    SLICE_X49Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[7].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.164    
+                         clock uncertainty           -0.035    20.129    
+    SLICE_X49Y127        FDCE (Setup_fdce_C_D)        0.034    20.163    WRAPPER/CPU/PC_reg/loop1[7].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.163    
+                         arrival time                         -22.303    
+  -------------------------------------------------------------------
+                         slack                                 -2.140    
+
+Slack (VIOLATED) :        -2.135ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[13].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.130ns  (logic 2.071ns (17.073%)  route 10.059ns (82.927%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.054ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.900ns = ( 19.900 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          0.657    21.162    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_reg_2
+    SLICE_X42Y124        LUT6 (Prop_lut6_I3_O)        0.124    21.286 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_5__56/O
+                         net (fo=25, routed)          0.933    22.219    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_76
+    SLICE_X50Y125        LUT6 (Prop_lut6_I4_O)        0.124    22.343 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_1__10/O
+                         net (fo=1, routed)           0.000    22.343    WRAPPER/CPU/PC_reg/loop1[13].dff/q_reg_2
+    SLICE_X50Y125        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[13].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.478    19.900    WRAPPER/CPU/PC_reg/loop1[13].dff/clk0
+    SLICE_X50Y125        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[13].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.159    
+                         clock uncertainty           -0.035    20.124    
+    SLICE_X50Y125        FDCE (Setup_fdce_C_D)        0.084    20.208    WRAPPER/CPU/PC_reg/loop1[13].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.208    
+                         arrival time                         -22.343    
+  -------------------------------------------------------------------
+                         slack                                 -2.135    
+
+Slack (VIOLATED) :        -2.132ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[9].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        11.996ns  (logic 2.071ns (17.264%)  route 9.925ns (82.736%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.132ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.893ns = ( 19.893 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.188ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 f  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          1.053    21.559    WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_reg_43
+    SLICE_X53Y125        LUT6 (Prop_lut6_I3_O)        0.124    21.683 r  WRAPPER/CPU/DX_IR_reg/loop1[29].dff/q_i_4__47/O
+                         net (fo=1, routed)           0.403    22.086    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_74
+    SLICE_X53Y125        LUT6 (Prop_lut6_I2_O)        0.124    22.210 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_1__0/O
+                         net (fo=1, routed)           0.000    22.210    WRAPPER/CPU/PC_reg/loop1[9].dff/q_reg_2
+    SLICE_X53Y125        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[9].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.471    19.893    WRAPPER/CPU/PC_reg/loop1[9].dff/clk0
+    SLICE_X53Y125        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[9].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.188    20.081    
+                         clock uncertainty           -0.035    20.046    
+    SLICE_X53Y125        FDCE (Setup_fdce_C_D)        0.032    20.078    WRAPPER/CPU/PC_reg/loop1[9].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.078    
+                         arrival time                         -22.210    
+  -------------------------------------------------------------------
+                         slack                                 -2.132    
+
+Slack (VIOLATED) :        -2.129ns  (required time - arrival time)
+  Source:                 WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/PC_reg/loop1[11].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (sys_clk_pin fall@15.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        12.128ns  (logic 2.071ns (17.076%)  route 10.057ns (82.924%))
+  Logic Levels:           13  (LUT5=3 LUT6=10)
+  Clock Path Skew:        -0.049ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    4.905ns = ( 19.905 - 15.000 ) 
+    Source Clock Delay      (SCD):    5.213ns = ( 10.213 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.259ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.482     6.482 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           2.025     8.506    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.096     8.602 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.611    10.213    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/clk0
+    SLICE_X41Y130        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y130        FDCE (Prop_fdce_C_Q)         0.459    10.672 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_reg_replica/Q
+                         net (fo=11, routed)          1.147    11.820    WRAPPER/CPU/MW_IR_reg/loop1[31].dff/MW_IR[0]_repN
+    SLICE_X39Y129        LUT5 (Prop_lut5_I0_O)        0.124    11.944 r  WRAPPER/CPU/MW_IR_reg/loop1[31].dff/q_i_4__66/O
+                         net (fo=17, routed)          0.459    12.403    WRAPPER/CPU/DX_IR_reg/loop1[22].dff/rd[0]
+    SLICE_X40Y131        LUT6 (Prop_lut6_I5_O)        0.124    12.527 r  WRAPPER/CPU/DX_IR_reg/loop1[22].dff/q_i_27__0/O
+                         net (fo=1, routed)           0.638    13.165    WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_18__4
+    SLICE_X40Y130        LUT6 (Prop_lut6_I0_O)        0.124    13.289 r  WRAPPER/CPU/MW_IR_reg/loop1[29].dff/q_i_17__4/O
+                         net (fo=45, routed)          1.122    14.412    WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_98_1
+    SLICE_X40Y129        LUT5 (Prop_lut5_I3_O)        0.124    14.536 r  WRAPPER/CPU/MW_IR_reg/loop1[28].dff/q_i_20__2/O
+                         net (fo=2, routed)           0.917    15.452    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_5__23_0
+    SLICE_X37Y125        LUT5 (Prop_lut5_I1_O)        0.124    15.576 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8/O
+                         net (fo=6, routed)           0.843    16.420    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_9__8_n_0
+    SLICE_X36Y126        LUT6 (Prop_lut6_I1_O)        0.124    16.544 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22/O
+                         net (fo=5, routed)           0.475    17.018    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_10__22_n_0
+    SLICE_X39Y127        LUT6 (Prop_lut6_I5_O)        0.124    17.142 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31/O
+                         net (fo=5, routed)           0.845    17.987    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_31_n_0
+    SLICE_X39Y126        LUT6 (Prop_lut6_I1_O)        0.124    18.111 f  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_13__1/O
+                         net (fo=11, routed)          0.594    18.705    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_reg_74
+    SLICE_X39Y124        LUT6 (Prop_lut6_I4_O)        0.124    18.829 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27/O
+                         net (fo=1, routed)           0.659    19.489    WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_3__27_n_0
+    SLICE_X38Y123        LUT6 (Prop_lut6_I2_O)        0.124    19.613 r  WRAPPER/CPU/XM_IR_reg/loop1[28].dff/q_i_1_comp/O
+                         net (fo=39, routed)          0.769    20.382    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/overflow_in
+    SLICE_X44Y123        LUT6 (Prop_lut6_I5_O)        0.124    20.506 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_13__7/O
+                         net (fo=33, routed)          0.657    21.162    WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_reg_2
+    SLICE_X42Y124        LUT6 (Prop_lut6_I3_O)        0.124    21.286 r  WRAPPER/CPU/DX_IR_reg/loop1[31].dff/q_i_5__56/O
+                         net (fo=25, routed)          0.931    22.218    WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_reg_76
+    SLICE_X46Y127        LUT6 (Prop_lut6_I4_O)        0.124    22.342 r  WRAPPER/CPU/DX_IR_reg/loop1[27].dff/q_i_1__12/O
+                         net (fo=1, routed)           0.000    22.342    WRAPPER/CPU/PC_reg/loop1[11].dff/q_reg_3
+    SLICE_X46Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[11].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                     15.000    15.000 f  
+    E3                                                0.000    15.000 f  clock (IN)
+                         net (fo=0)                   0.000    15.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         1.411    16.411 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           1.920    18.331    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.091    18.422 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         1.483    19.905    WRAPPER/CPU/PC_reg/loop1[11].dff/clk0
+    SLICE_X46Y127        FDCE                                         r  WRAPPER/CPU/PC_reg/loop1[11].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism              0.259    20.164    
+                         clock uncertainty           -0.035    20.129    
+    SLICE_X46Y127        FDCE (Setup_fdce_C_D)        0.084    20.213    WRAPPER/CPU/PC_reg/loop1[11].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         20.213    
+                         arrival time                         -22.342    
+  -------------------------------------------------------------------
+                         slack                                 -2.129    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.150ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/XM_PC_reg/loop1[21].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/MW_PC_reg/loop1[21].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.260ns  (logic 0.146ns (56.167%)  route 0.114ns (43.833%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.033ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns = ( 6.991 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.478ns = ( 6.478 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.559     6.478    WRAPPER/CPU/XM_PC_reg/loop1[21].dff/clk0
+    SLICE_X33Y132        FDCE                                         r  WRAPPER/CPU/XM_PC_reg/loop1[21].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y132        FDCE (Prop_fdce_C_Q)         0.146     6.624 r  WRAPPER/CPU/XM_PC_reg/loop1[21].dff/q_reg/Q
+                         net (fo=1, routed)           0.114     6.738    WRAPPER/CPU/MW_PC_reg/loop1[21].dff/q_reg_1
+    SLICE_X35Y131        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[21].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.826     6.991    WRAPPER/CPU/MW_PC_reg/loop1[21].dff/clk0
+    SLICE_X35Y131        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[21].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.479     6.511    
+    SLICE_X35Y131        FDCE (Hold_fdce_C_D)         0.077     6.588    WRAPPER/CPU/MW_PC_reg/loop1[21].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.588    
+                         arrival time                           6.738    
+  -------------------------------------------------------------------
+                         slack                                  0.150    
+
+Slack (MET) :             0.169ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/FD_IR_reg/loop1[29].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.527ns  (logic 0.212ns (40.212%)  route 0.315ns (59.788%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.259ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.977ns = ( 6.977 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.467ns = ( 6.467 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.548     6.467    WRAPPER/CPU/FD_IR_reg/loop1[29].dff/clk0
+    SLICE_X46Y123        FDCE                                         r  WRAPPER/CPU/FD_IR_reg/loop1[29].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X46Y123        FDCE (Prop_fdce_C_Q)         0.167     6.634 f  WRAPPER/CPU/FD_IR_reg/loop1[29].dff/q_reg/Q
+                         net (fo=13, routed)          0.315     6.950    WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg_51[1]
+    SLICE_X53Y124        LUT6 (Prop_lut6_I1_O)        0.045     6.995 r  WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_i_1__231_comp/O
+                         net (fo=1, routed)           0.000     6.995    WRAPPER/CPU/FD_IR_reg/loop1[27].dff/FD_IR_in[27]
+    SLICE_X53Y124        FDCE                                         r  WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.811     6.977    WRAPPER/CPU/FD_IR_reg/loop1[27].dff/clk0
+    SLICE_X53Y124        FDCE                                         r  WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.250     6.726    
+    SLICE_X53Y124        FDCE (Hold_fdce_C_D)         0.099     6.825    WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.825    
+                         arrival time                           6.995    
+  -------------------------------------------------------------------
+                         slack                                  0.169    
+
+Slack (MET) :             0.189ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/DX_PC_reg/loop1[10].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/XM_PC_reg/loop1[10].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.285ns  (logic 0.146ns (51.275%)  route 0.139ns (48.725%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.014ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.984ns = ( 6.984 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.468ns = ( 6.468 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.501ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.549     6.468    WRAPPER/CPU/DX_PC_reg/loop1[10].dff/clk0
+    SLICE_X41Y125        FDCE                                         r  WRAPPER/CPU/DX_PC_reg/loop1[10].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y125        FDCE (Prop_fdce_C_Q)         0.146     6.614 r  WRAPPER/CPU/DX_PC_reg/loop1[10].dff/q_reg/Q
+                         net (fo=12, routed)          0.139     6.753    WRAPPER/CPU/XM_PC_reg/loop1[10].dff/DX_PC[0]
+    SLICE_X41Y126        FDCE                                         r  WRAPPER/CPU/XM_PC_reg/loop1[10].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.819     6.984    WRAPPER/CPU/XM_PC_reg/loop1[10].dff/clk0
+    SLICE_X41Y126        FDCE                                         r  WRAPPER/CPU/XM_PC_reg/loop1[10].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.501     6.482    
+    SLICE_X41Y126        FDCE (Hold_fdce_C_D)         0.082     6.564    WRAPPER/CPU/XM_PC_reg/loop1[10].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.564    
+                         arrival time                           6.753    
+  -------------------------------------------------------------------
+                         slack                                  0.189    
+
+Slack (MET) :             0.189ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/XM_PC_reg/loop1[27].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/MW_PC_reg/loop1[27].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.262ns  (logic 0.146ns (55.690%)  route 0.116ns (44.310%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.993ns = ( 6.993 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.478ns = ( 6.478 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.514ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.559     6.478    WRAPPER/CPU/XM_PC_reg/loop1[27].dff/clk0
+    SLICE_X33Y132        FDCE                                         r  WRAPPER/CPU/XM_PC_reg/loop1[27].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X33Y132        FDCE (Prop_fdce_C_Q)         0.146     6.624 r  WRAPPER/CPU/XM_PC_reg/loop1[27].dff/q_reg/Q
+                         net (fo=1, routed)           0.116     6.741    WRAPPER/CPU/MW_PC_reg/loop1[27].dff/q_reg_1
+    SLICE_X33Y132        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[27].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.827     6.993    WRAPPER/CPU/MW_PC_reg/loop1[27].dff/clk0
+    SLICE_X33Y132        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[27].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.514     6.478    
+    SLICE_X33Y132        FDCE (Hold_fdce_C_D)         0.073     6.551    WRAPPER/CPU/MW_PC_reg/loop1[27].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.551    
+                         arrival time                           6.741    
+  -------------------------------------------------------------------
+                         slack                                  0.189    
+
+Slack (MET) :             0.191ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/XM_PC_reg/loop1[0].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/MW_PC_reg/loop1[0].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.279ns  (logic 0.167ns (59.856%)  route 0.112ns (40.144%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.991ns = ( 6.991 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.475ns = ( 6.475 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.500ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.556     6.475    WRAPPER/CPU/XM_PC_reg/loop1[0].dff/clk0
+    SLICE_X34Y130        FDCE                                         r  WRAPPER/CPU/XM_PC_reg/loop1[0].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y130        FDCE (Prop_fdce_C_Q)         0.167     6.642 r  WRAPPER/CPU/XM_PC_reg/loop1[0].dff/q_reg/Q
+                         net (fo=1, routed)           0.112     6.754    WRAPPER/CPU/MW_PC_reg/loop1[0].dff/q_reg_1
+    SLICE_X35Y131        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[0].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.826     6.991    WRAPPER/CPU/MW_PC_reg/loop1[0].dff/clk0
+    SLICE_X35Y131        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[0].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.500     6.490    
+    SLICE_X35Y131        FDCE (Hold_fdce_C_D)         0.073     6.563    WRAPPER/CPU/MW_PC_reg/loop1[0].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.563    
+                         arrival time                           6.754    
+  -------------------------------------------------------------------
+                         slack                                  0.191    
+
+Slack (MET) :             0.197ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/DX_IR_reg/loop1[18].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/XM_IR_reg/loop1[18].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.293ns  (logic 0.146ns (49.814%)  route 0.147ns (50.186%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.033ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.987ns = ( 6.987 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.474ns = ( 6.474 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.479ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.555     6.474    WRAPPER/CPU/DX_IR_reg/loop1[18].dff/clk0
+    SLICE_X41Y131        FDCE                                         r  WRAPPER/CPU/DX_IR_reg/loop1[18].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X41Y131        FDCE (Prop_fdce_C_Q)         0.146     6.620 r  WRAPPER/CPU/DX_IR_reg/loop1[18].dff/q_reg/Q
+                         net (fo=5, routed)           0.147     6.768    WRAPPER/CPU/XM_IR_reg/loop1[18].dff/DX_IR[0]
+    SLICE_X42Y130        FDCE                                         r  WRAPPER/CPU/XM_IR_reg/loop1[18].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.822     6.987    WRAPPER/CPU/XM_IR_reg/loop1[18].dff/clk0
+    SLICE_X42Y130        FDCE                                         r  WRAPPER/CPU/XM_IR_reg/loop1[18].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.479     6.507    
+    SLICE_X42Y130        FDCE (Hold_fdce_C_D)         0.063     6.570    WRAPPER/CPU/XM_IR_reg/loop1[18].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.570    
+                         arrival time                           6.768    
+  -------------------------------------------------------------------
+                         slack                                  0.197    
+
+Slack (MET) :             0.205ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/XM_IR_reg/loop1[0].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/MW_IR_reg/loop1[0].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.294ns  (logic 0.167ns (56.736%)  route 0.127ns (43.264%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns = ( 6.989 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.473ns = ( 6.473 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.499ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.554     6.473    WRAPPER/CPU/XM_IR_reg/loop1[0].dff/clk0
+    SLICE_X42Y130        FDCE                                         r  WRAPPER/CPU/XM_IR_reg/loop1[0].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X42Y130        FDCE (Prop_fdce_C_Q)         0.167     6.640 r  WRAPPER/CPU/XM_IR_reg/loop1[0].dff/q_reg/Q
+                         net (fo=2, routed)           0.127     6.768    WRAPPER/CPU/MW_IR_reg/loop1[0].dff/XM_IR[0]
+    SLICE_X43Y132        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[0].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.823     6.989    WRAPPER/CPU/MW_IR_reg/loop1[0].dff/clk0
+    SLICE_X43Y132        FDCE                                         r  WRAPPER/CPU/MW_IR_reg/loop1[0].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.499     6.489    
+    SLICE_X43Y132        FDCE (Hold_fdce_C_D)         0.073     6.562    WRAPPER/CPU/MW_IR_reg/loop1[0].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.562    
+                         arrival time                           6.768    
+  -------------------------------------------------------------------
+                         slack                                  0.205    
+
+Slack (MET) :             0.221ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/FD_PC_reg/loop1[5].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.588ns  (logic 0.191ns (32.459%)  route 0.397ns (67.541%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.269ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.984ns = ( 6.984 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.464ns = ( 6.464 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.250ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.545     6.464    WRAPPER/CPU/FD_IR_reg/loop1[27].dff/clk0
+    SLICE_X53Y124        FDCE                                         r  WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X53Y124        FDCE (Prop_fdce_C_Q)         0.146     6.610 r  WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg/Q
+                         net (fo=13, routed)          0.397     7.008    WRAPPER/CPU/PC_reg/loop1[3].dff/FD_IR[0]_alias
+    SLICE_X45Y122        LUT6 (Prop_lut6_I3_O)        0.045     7.053 r  WRAPPER/CPU/PC_reg/loop1[3].dff/q_i_1__57_comp/O
+                         net (fo=1, routed)           0.000     7.053    WRAPPER/CPU/FD_PC_reg/loop1[5].dff/FD_PC_in[0]
+    SLICE_X45Y122        FDCE                                         r  WRAPPER/CPU/FD_PC_reg/loop1[5].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.818     6.984    WRAPPER/CPU/FD_PC_reg/loop1[5].dff/clk0
+    SLICE_X45Y122        FDCE                                         r  WRAPPER/CPU/FD_PC_reg/loop1[5].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.250     6.733    
+    SLICE_X45Y122        FDCE (Hold_fdce_C_D)         0.099     6.832    WRAPPER/CPU/FD_PC_reg/loop1[5].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.832    
+                         arrival time                           7.053    
+  -------------------------------------------------------------------
+                         slack                                  0.221    
+
+Slack (MET) :             0.223ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/XM_PC_reg/loop1[23].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/MW_PC_reg/loop1[23].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.279ns  (logic 0.167ns (59.856%)  route 0.112ns (40.144%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.992ns = ( 6.992 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.477ns = ( 6.477 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.514ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.558     6.477    WRAPPER/CPU/XM_PC_reg/loop1[23].dff/clk0
+    SLICE_X34Y132        FDCE                                         r  WRAPPER/CPU/XM_PC_reg/loop1[23].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X34Y132        FDCE (Prop_fdce_C_Q)         0.167     6.644 r  WRAPPER/CPU/XM_PC_reg/loop1[23].dff/q_reg/Q
+                         net (fo=1, routed)           0.112     6.756    WRAPPER/CPU/MW_PC_reg/loop1[23].dff/q_reg_1
+    SLICE_X34Y132        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[23].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.827     6.992    WRAPPER/CPU/MW_PC_reg/loop1[23].dff/clk0
+    SLICE_X34Y132        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[23].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.514     6.477    
+    SLICE_X34Y132        FDCE (Hold_fdce_C_D)         0.056     6.533    WRAPPER/CPU/MW_PC_reg/loop1[23].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.533    
+                         arrival time                           6.756    
+  -------------------------------------------------------------------
+                         slack                                  0.223    
+
+Slack (MET) :             0.229ns  (arrival time - required time)
+  Source:                 WRAPPER/CPU/XM_PC_reg/loop1[15].dff/q_reg/C
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            WRAPPER/CPU/MW_PC_reg/loop1[15].dff/q_reg/D
+                            (falling edge-triggered cell FDCE clocked by sys_clk_pin  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             sys_clk_pin
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (sys_clk_pin fall@5.000ns - sys_clk_pin fall@5.000ns)
+  Data Path Delay:        0.253ns  (logic 0.133ns (52.666%)  route 0.120ns (47.334%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.000ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.985ns = ( 6.985 - 5.000 ) 
+    Source Clock Delay      (SCD):    1.471ns = ( 6.471 - 5.000 ) 
+    Clock Pessimism Removal (CPR):    0.513ns
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.250     5.250 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.644     5.894    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.026     5.920 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.552     6.471    WRAPPER/CPU/XM_PC_reg/loop1[15].dff/clk0
+    SLICE_X45Y128        FDCE                                         r  WRAPPER/CPU/XM_PC_reg/loop1[15].dff/q_reg/C  (IS_INVERTED)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X45Y128        FDCE (Prop_fdce_C_Q)         0.133     6.604 r  WRAPPER/CPU/XM_PC_reg/loop1[15].dff/q_reg/Q
+                         net (fo=1, routed)           0.120     6.724    WRAPPER/CPU/MW_PC_reg/loop1[15].dff/q_reg_1
+    SLICE_X45Y128        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[15].dff/q_reg/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock sys_clk_pin fall edge)
+                                                      5.000     5.000 f  
+    E3                                                0.000     5.000 f  clock (IN)
+                         net (fo=0)                   0.000     5.000    clock
+    E3                   IBUF (Prop_ibuf_I_O)         0.438     5.438 f  clock_IBUF_inst/O
+                         net (fo=1, routed)           0.699     6.136    clock_IBUF
+    BUFGCTRL_X0Y16       BUFG (Prop_bufg_I_O)         0.029     6.165 f  clock_IBUF_BUFG_inst/O
+                         net (fo=878, routed)         0.820     6.985    WRAPPER/CPU/MW_PC_reg/loop1[15].dff/clk0
+    SLICE_X45Y128        FDCE                                         r  WRAPPER/CPU/MW_PC_reg/loop1[15].dff/q_reg/C  (IS_INVERTED)
+                         clock pessimism             -0.513     6.471    
+    SLICE_X45Y128        FDCE (Hold_fdce_C_D)         0.024     6.495    WRAPPER/CPU/MW_PC_reg/loop1[15].dff/q_reg
+  -------------------------------------------------------------------
+                         required time                         -6.495    
+                         arrival time                           6.724    
+  -------------------------------------------------------------------
+                         slack                                  0.229    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         sys_clk_pin
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { clock }
+
+Check Type        Corner  Lib Pin             Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     RAMB18E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB18_X1Y48    WRAPPER/InstMem/dataOut_reg_1/CLKARDCLK
+Min Period        n/a     RAMB36E1/CLKARDCLK  n/a            2.576         10.000      7.424      RAMB36_X1Y25    WRAPPER/InstMem/dataOut_reg_0/CLKARDCLK
+Min Period        n/a     BUFG/I              n/a            2.155         10.000      7.845      BUFGCTRL_X0Y16  clock_IBUF_BUFG_inst/I
+Min Period        n/a     FDCE/C              n/a            1.000         10.000      9.000      SLICE_X48Y126   WRAPPER/CPU/DX_A_reg/loop1[29].dff/q_reg/C
+Min Period        n/a     FDCE/C              n/a            1.000         10.000      9.000      SLICE_X41Y127   WRAPPER/CPU/DX_A_reg/loop1[2].dff/q_reg/C
+Min Period        n/a     FDCE/C              n/a            1.000         10.000      9.000      SLICE_X46Y126   WRAPPER/CPU/DX_A_reg/loop1[30].dff/q_reg/C
+Min Period        n/a     FDCE/C              n/a            1.000         10.000      9.000      SLICE_X46Y126   WRAPPER/CPU/DX_A_reg/loop1[31].dff/q_reg/C
+Min Period        n/a     FDCE/C              n/a            1.000         10.000      9.000      SLICE_X34Y125   WRAPPER/CPU/DX_A_reg/loop1[3].dff/q_reg/C
+Min Period        n/a     FDCE/C              n/a            1.000         10.000      9.000      SLICE_X46Y126   WRAPPER/CPU/DX_A_reg/loop1[4].dff/q_reg/C
+Min Period        n/a     FDCE/C              n/a            1.000         10.000      9.000      SLICE_X43Y127   WRAPPER/CPU/DX_A_reg/loop1[5].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X44Y128   WRAPPER/CPU/DX_A_reg/loop1[9].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X46Y128   WRAPPER/CPU/DX_B_reg/loop1[11].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X44Y128   WRAPPER/CPU/DX_B_reg/loop1[13].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X42Y128   WRAPPER/CPU/DX_B_reg/loop1[14].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X56Y134   WRAPPER/RegisterFile/register2/loop1[1].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X36Y141   WRAPPER/RegisterFile/register2/loop1[21].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X53Y135   WRAPPER/RegisterFile/register21/loop1[8].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X37Y141   WRAPPER/RegisterFile/register8/loop1[21].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X37Y141   WRAPPER/RegisterFile/register8/loop1[22].dff/q_reg/C
+Low Pulse Width   Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X43Y128   WRAPPER/CPU/DX_B_reg/loop1[15].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X48Y136   WRAPPER/RegisterFile/register22/loop1[10].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X45Y137   WRAPPER/RegisterFile/register30/loop1[18].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X49Y136   WRAPPER/RegisterFile/register8/loop1[14].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X50Y142   WRAPPER/RegisterFile/register8/loop1[17].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X49Y136   WRAPPER/RegisterFile/register8/loop1[18].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X49Y136   WRAPPER/RegisterFile/register8/loop1[25].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X43Y136   WRAPPER/RegisterFile/register8/loop1[29].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X44Y137   WRAPPER/RegisterFile/register1/loop1[18].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X55Y128   WRAPPER/RegisterFile/register1/loop1[1].dff/q_reg/C
+High Pulse Width  Slow    FDCE/C              n/a            0.500         5.000       4.500      SLICE_X51Y141   WRAPPER/RegisterFile/register1/loop1[20].dff/q_reg/C
+
+
+

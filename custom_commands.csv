@@ -1,4 +1,1 @@
-get_button_input,JII,01001
-communicate_game_active,JI,01010
-get_load_sensor_data,JII,01011
-display_current_score,JII,01100
+increment_score,I,01001

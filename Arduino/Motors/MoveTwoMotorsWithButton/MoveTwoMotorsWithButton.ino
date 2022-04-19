@@ -3,10 +3,10 @@
 
 // ----- BUTTONS -----
 // Input Pins
-const int buttonPin_1_CW = 2;
-const int buttonPin_1_CCW = 3;
-const int buttonPin_2_CW = 4;
-const int buttonPin_2_CCW = 5;
+const int buttonPin_1_CW = 31;
+const int buttonPin_1_CCW = 33;
+const int buttonPin_2_CW = 35;
+const int buttonPin_2_CCW = 37;
 
 // Motor 1 Button CW
 int buttonState_1_CW = LOW;             // the current reading from the input pin
@@ -41,12 +41,12 @@ unsigned long debounceDelay_2_CCW = 50;
 #define motorInterfaceType 1
 #define moveDistance 10
 
-const int dirPin_1 = 8;
-const int stepPin_1 = 9;
+const int stepPin_1 = 2;
+const int dirPin_1 = 5;
 AccelStepper myStepper_1(motorInterfaceType, stepPin_1, dirPin_1);
 
-const int dirPin_2 = 10;
-const int stepPin_2 = 11;
+const int stepPin_2 = 3;
+const int dirPin_2 = 6;
 AccelStepper myStepper_2(motorInterfaceType, stepPin_2, dirPin_2);
 
 
