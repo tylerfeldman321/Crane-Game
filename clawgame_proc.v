@@ -24,25 +24,28 @@ module clawgame_proc(
     wire time_out;
 
     wire increment_score_pe, game_clock_pe;
+    
+    wire reset_debounced;
+    debouncer reset_debouncer(reset, clock, reset_debounced);
 
     assign time_out = (time_left == 32'b00000000000000000000000000000000);
 
-    Wrapper WRAPPER(clock, reset, score, increment_score_pe, time_left, game_clock_pe);
+    Wrapper WRAPPER(clock, reset_debounced, score, increment_score_pe, time_left, game_clock_pe);
 
-    assign game_active = ~(time_left == 32'b0) && ~reset;
+    assign game_active = ~(time_left == 32'b0) && ~reset_debounced;
 
-    // wire increment_score_debounced;
-    // debouncer increment_score_debouncer(increment_score, clock, increment_score_debounced);
+     wire increment_score_debounced;
+     debouncer increment_score_debouncer(increment_score, clock, increment_score_debounced);
 
-    positive_edge_detector PE_score(increment_score, ~clock, 1'b0, increment_score_pe);
+    positive_edge_detector PE_score(increment_score_debounced, ~clock, 1'b0, increment_score_pe);
 
     // dffe_ref DFF(q, d, clk, en, clr);
     wire game_clock;
-    one_second_clock GAME_TIMER(clock, reset, game_clock);
+    one_second_clock GAME_TIMER(clock, reset_debounced, game_clock);
     positive_edge_detector PE_game_clock(game_clock, ~clock, 1'b0, game_clock_pe);
     
     //timer TIMER(clock, reset, time_left);
-    LED_display_controller LEDCONTROLLER(clock, reset, time_left[15:0], score[15:0], anode_activate, LED_out);
+    LED_display_controller LEDCONTROLLER(clock, reset_debounced, time_left[15:0], score[15:0], anode_activate, LED_out);
 
     // ila_0 debuggers(.clk(clock), .probe0(score), .probe1(reset), .probe2(clock));
 

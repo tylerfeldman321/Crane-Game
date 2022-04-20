@@ -2,8 +2,8 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Wed Apr 20 01:20:45 2022
-# Process ID: 13564
+# Start of session at: Wed Apr 20 04:52:28 2022
+# Process ID: 3664
 # Current directory: C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ClawGameProject/ClawGameProject.runs/synth_1
 # Command line: vivado.exe -log clawgame_proc.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source clawgame_proc.tcl
 # Log file: C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ClawGameProject/ClawGameProject.runs/synth_1/clawgame_proc.vds
@@ -17,7 +17,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 7280
+INFO: [Synth 8-7075] Helper process launched with PID 32476
 WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:34]
 WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:34]
 WARNING: [Synth 8-6901] identifier 'opcode' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:34]
@@ -120,111 +120,117 @@ WARNING: [Synth 8-6901] identifier 'M_write_reg' is used before its declaration 
 WARNING: [Synth 8-6901] identifier 'M_regfile_wren' is used before its declaration [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:231]
 INFO: [Common 17-14] Message 'Synth 8-6901' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1014.082 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1014.570 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'clawgame_proc' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_proc.v:1]
+INFO: [Synth 8-6157] synthesizing module 'debouncer' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:1]
+INFO: [Synth 8-6157] synthesizing module 'clock_div' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:17]
+INFO: [Synth 8-6155] done synthesizing module 'clock_div' (1#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:17]
+INFO: [Synth 8-6157] synthesizing module 'dff' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'dff' (2#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:33]
+INFO: [Synth 8-6155] done synthesizing module 'debouncer' (3#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Debounce/debouncer.v:1]
 INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Wrapper.v:27]
 	Parameter INSTR_FILE bound to: clawgame_final - type: string 
 INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:20]
 INFO: [Synth 8-6157] synthesizing module 'register' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/register.v:1]
 INFO: [Synth 8-6157] synthesizing module 'dffe_ref' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/dffe_ref.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'dffe_ref' (1#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/dffe_ref.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'register' (2#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/register.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'dffe_ref' (4#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/dffe_ref.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'register' (5#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/register.v:1]
 INFO: [Synth 8-6157] synthesizing module 'control' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'control' (3#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'control' (6#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/control.v:1]
 INFO: [Synth 8-6157] synthesizing module 'alu' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/alu.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sll_barrel_shifter' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_barrel_shifter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sll_1' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_1.v:1]
 INFO: [Synth 8-6157] synthesizing module 'mux_2' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_2.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'mux_2' (4#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_2.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sll_1' (5#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_1.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2' (7#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_1' (8#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_1.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sll_2' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_2.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sll_2' (6#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_2' (9#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_2.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sll_4' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_4.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sll_4' (7#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_4' (10#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_4.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sll_8' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_8.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sll_8' (8#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_8' (11#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_8.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sll_16' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_16.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sll_16' (9#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_16.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sll_barrel_shifter' (10#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_barrel_shifter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_16' (12#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sll_barrel_shifter' (13#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sll/sll_barrel_shifter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sra_barrel_shifter' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_barrel_shifter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sra_1' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_1.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sra_1' (11#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_1.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_1' (14#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_1.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sra_2' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_2.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sra_2' (12#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_2.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_2' (15#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_2.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sra_4' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_4.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sra_4' (13#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_4' (16#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_4.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sra_8' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_8.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sra_8' (14#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_8' (17#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_8.v:1]
 INFO: [Synth 8-6157] synthesizing module 'sra_16' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_16.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sra_16' (15#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_16.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'sra_barrel_shifter' (16#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_barrel_shifter.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_16' (18#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_16.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sra_barrel_shifter' (19#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/sra/sra_barrel_shifter.v:1]
 INFO: [Synth 8-6157] synthesizing module 'carry_lookahead_adder' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/carry_lookahead_adder.v:1]
 INFO: [Synth 8-6157] synthesizing module 'xor_32bit_w_1bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/xor_32bit_w_1bit.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'xor_32bit_w_1bit' (17#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/xor_32bit_w_1bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'xor_32bit_w_1bit' (20#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/xor_32bit_w_1bit.v:1]
 INFO: [Synth 8-6157] synthesizing module 'cla_8_bit_block' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/cla_8_bit_block.v:1]
 INFO: [Synth 8-6157] synthesizing module 'full_adder_sum' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/full_adder_sum.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'full_adder_sum' (18#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/full_adder_sum.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'cla_8_bit_block' (19#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/cla_8_bit_block.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'carry_lookahead_adder' (20#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/carry_lookahead_adder.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'full_adder_sum' (21#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/full_adder_sum.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'cla_8_bit_block' (22#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/cla_8_bit_block.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'carry_lookahead_adder' (23#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/adder/carry_lookahead_adder.v:1]
 INFO: [Synth 8-6157] synthesizing module 'mux_8' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_8.v:1]
 INFO: [Synth 8-6157] synthesizing module 'mux_4' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_4.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'mux_4' (21#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_4.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'mux_8' (22#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_8.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'alu' (23#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/alu.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4' (24#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_4.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'mux_8' (25#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/mux/mux_8.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'alu' (26#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/alu/alu.v:1]
 INFO: [Synth 8-6157] synthesizing module 'multdiv' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multdiv.v:1]
 INFO: [Synth 8-6157] synthesizing module 'multiplier' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multiplier.v:1]
 WARNING: [Synth 8-6090] variable 'P' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multiplier.v:52]
-INFO: [Synth 8-6155] done synthesizing module 'multiplier' (24#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multiplier.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multiplier' (27#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multiplier.v:1]
 INFO: [Synth 8-6157] synthesizing module 'divider' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/divider.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'divider' (25#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/divider.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'multdiv' (26#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multdiv.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'processor' (27#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:20]
+INFO: [Synth 8-6155] done synthesizing module 'divider' (28#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/divider.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'multdiv' (29#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Provided Behavioral Components/multdiv.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'processor' (30#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/processor.v:20]
 INFO: [Synth 8-6157] synthesizing module 'ROM' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ROM.v:2]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDRESS_WIDTH bound to: 12 - type: integer 
 	Parameter DEPTH bound to: 4096 - type: integer 
 	Parameter MEMFILE bound to: 144'b011000110110110001100001011101110110011101100001011011010110010101011111011001100110100101101110011000010110110000101110011011010110010101101101 
 INFO: [Synth 8-3876] $readmem data file 'clawgame_final.mem' is read successfully [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ROM.v:11]
-INFO: [Synth 8-6155] done synthesizing module 'ROM' (28#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ROM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (31#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ROM.v:2]
 INFO: [Synth 8-6157] synthesizing module 'regfile' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/regfile.v:1]
 INFO: [Synth 8-6157] synthesizing module 'decoder_5_to_32' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/decoder_5_to_32.v:1]
 INFO: [Synth 8-6157] synthesizing module 'not_5bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/not_5bit.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'not_5bit' (29#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/not_5bit.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'decoder_5_to_32' (30#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/decoder_5_to_32.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'not_5bit' (32#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/not_5bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'decoder_5_to_32' (33#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/decoder_5_to_32.v:1]
 INFO: [Synth 8-6157] synthesizing module 'and_32bit_w_1bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/and_32bit_w_1bit.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'and_32bit_w_1bit' (31#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/and_32bit_w_1bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'and_32bit_w_1bit' (34#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/and_32bit_w_1bit.v:1]
 INFO: [Synth 8-6157] synthesizing module 'select_read_value' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/select_read_value.v:1]
 INFO: [Synth 8-6157] synthesizing module 'tristate_buffer_32bit' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/tristate_buffer_32bit.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'tristate_buffer_32bit' (32#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/tristate_buffer_32bit.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'select_read_value' (33#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/select_read_value.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'regfile' (34#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/regfile.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'tristate_buffer_32bit' (35#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/tristate_buffer_32bit.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'select_read_value' (36#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/select_read_value.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'regfile' (37#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/regfile/regfile.v:1]
 INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/RAM.v:2]
 	Parameter DATA_WIDTH bound to: 32 - type: integer 
 	Parameter ADDRESS_WIDTH bound to: 12 - type: integer 
 	Parameter DEPTH bound to: 4096 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'RAM' (35#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/RAM.v:2]
-INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (36#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Wrapper.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (38#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/RAM.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (39#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Wrapper.v:27]
 INFO: [Synth 8-6157] synthesizing module 'positive_edge_detector' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/positive_edge_detector.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'positive_edge_detector' (37#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/positive_edge_detector.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'positive_edge_detector' (40#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/positive_edge_detector.v:1]
 INFO: [Synth 8-6157] synthesizing module 'one_second_clock' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Timing/one_second_clock.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'one_second_clock' (38#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Timing/one_second_clock.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'one_second_clock' (41#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Timing/one_second_clock.v:1]
 INFO: [Synth 8-6157] synthesizing module 'LED_display_controller' [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Display/LED_display_controller.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'LED_display_controller' (39#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Display/LED_display_controller.v:1]
-INFO: [Synth 8-6155] done synthesizing module 'clawgame_proc' (40#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_proc.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'LED_display_controller' (42#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/Display/LED_display_controller.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'clawgame_proc' (43#1) [C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/clawgame_proc.v:1]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1014.082 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1014.570 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.082 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.570 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.082 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1014.570 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.178 . Memory (MB): peak = 1014.082 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.184 . Memory (MB): peak = 1014.570 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -235,29 +241,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/clawgame_proc_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1026.184 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1020.383 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.027 . Memory (MB): peak = 1026.184 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.028 . Memory (MB): peak = 1020.383 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1026.184 ; gain = 12.102
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1020.383 ; gain = 5.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1026.184 ; gain = 12.102
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1020.383 ; gain = 5.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1026.184 ; gain = 12.102
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1020.383 ; gain = 5.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1026.184 ; gain = 12.102
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 1020.383 ; gain = 5.812
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -277,7 +283,7 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 3     
 	               16 Bit    Registers := 1     
 	                6 Bit    Registers := 2     
-	                1 Bit    Registers := 1583  
+	                1 Bit    Registers := 1591  
 +---Multipliers : 
 	              32x32  Multipliers := 1     
 +---RAMs : 
@@ -326,7 +332,7 @@ DSP Report: register mult/real_prod_reg is absorbed into DSP mult/real_prod_reg.
 DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
 DSP Report: operator mult/real_prod0 is absorbed into DSP mult/real_prod_reg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:42 ; elapsed = 00:01:43 . Memory (MB): peak = 1028.461 ; gain = 14.379
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:01:36 . Memory (MB): peak = 1029.727 ; gain = 15.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -358,13 +364,13 @@ Finished ROM, RAM, DSP and Shift Register Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:49 ; elapsed = 00:01:51 . Memory (MB): peak = 1028.461 ; gain = 14.379
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:01:44 . Memory (MB): peak = 1029.727 ; gain = 15.156
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:34 ; elapsed = 00:02:36 . Memory (MB): peak = 1181.500 ; gain = 167.418
+Finished Timing Optimization : Time (s): cpu = 00:02:27 ; elapsed = 00:02:28 . Memory (MB): peak = 1179.371 ; gain = 164.801
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
@@ -372,7 +378,7 @@ Start Technology Mapping
 INFO: [Synth 8-7052] The timing for the instance WRAPPER/InstMem/dataOut_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance WRAPPER/InstMem/dataOut_reg_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:36 ; elapsed = 00:02:38 . Memory (MB): peak = 1229.688 ; gain = 215.605
+Finished Technology Mapping : Time (s): cpu = 00:02:29 ; elapsed = 00:02:30 . Memory (MB): peak = 1228.203 ; gain = 213.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -390,37 +396,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:40 ; elapsed = 00:02:42 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Finished IO Insertion : Time (s): cpu = 00:02:33 ; elapsed = 00:02:34 . Memory (MB): peak = 1234.891 ; gain = 220.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:40 ; elapsed = 00:02:42 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:33 ; elapsed = 00:02:34 . Memory (MB): peak = 1234.891 ; gain = 220.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:41 ; elapsed = 00:02:42 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:34 ; elapsed = 00:02:35 . Memory (MB): peak = 1234.891 ; gain = 220.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:34 ; elapsed = 00:02:35 . Memory (MB): peak = 1234.891 ; gain = 220.320
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:34 ; elapsed = 00:02:35 . Memory (MB): peak = 1234.934 ; gain = 220.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:34 ; elapsed = 00:02:35 . Memory (MB): peak = 1234.934 ; gain = 220.363
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -437,39 +443,39 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     1|
-|2     |CARRY4   |   100|
-|3     |LUT1     |    24|
-|4     |LUT2     |   551|
+|2     |CARRY4   |   114|
+|3     |LUT1     |    26|
+|4     |LUT2     |   552|
 |5     |LUT3     |   248|
-|6     |LUT4     |   286|
-|7     |LUT5     |   248|
-|8     |LUT6     |  1010|
+|6     |LUT4     |   296|
+|7     |LUT5     |   256|
+|8     |LUT6     |  1018|
 |9     |RAMB36E1 |     2|
 |11    |FDCE     |   881|
-|12    |FDRE     |     4|
+|12    |FDRE     |    66|
 |13    |IBUF     |     3|
 |14    |OBUF     |    17|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:34 ; elapsed = 00:02:35 . Memory (MB): peak = 1234.934 ; gain = 220.363
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:31 ; elapsed = 00:02:39 . Memory (MB): peak = 1236.371 ; gain = 210.188
-Synthesis Optimization Complete : Time (s): cpu = 00:02:41 ; elapsed = 00:02:43 . Memory (MB): peak = 1236.371 ; gain = 222.289
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:24 ; elapsed = 00:02:31 . Memory (MB): peak = 1234.934 ; gain = 214.551
+Synthesis Optimization Complete : Time (s): cpu = 00:02:34 ; elapsed = 00:02:35 . Memory (MB): peak = 1234.934 ; gain = 220.363
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.089 . Memory (MB): peak = 1236.371 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 102 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1234.934 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 116 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1236.371 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1234.934 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-99 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+105 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:47 ; elapsed = 00:02:51 . Memory (MB): peak = 1236.371 ; gain = 222.289
+synth_design: Time (s): cpu = 00:02:40 ; elapsed = 00:02:43 . Memory (MB): peak = 1234.934 ; gain = 220.363
 INFO: [Common 17-1381] The checkpoint 'C:/Users/tyler/Documents/Spring2022/ECE350/final-project-team-25/ClawGameProject/ClawGameProject.runs/synth_1/clawgame_proc.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file clawgame_proc_utilization_synth.rpt -pb clawgame_proc_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Apr 20 01:23:39 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed Apr 20 04:55:15 2022...

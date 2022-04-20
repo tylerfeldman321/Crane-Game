@@ -3,12 +3,19 @@
 
 // ----- BUTTONS -----
 // Input Pins
-const int right = 27;
-const int left = 25;
+const int right = 25;
+const int left = 27;
 const int buttonPin_3_CW = 29;
 const int buttonPin_3_CCW = 31;
 
 const int gameActivePin = 45;
+
+int relayButtonPin = 35;
+int relayActivatePin = 39;
+
+boolean toggleState = false;
+boolean newState = false;
+boolean prevState = false;
 
 // Right
 int buttonState_right = LOW;             // the current reading from the input pin
@@ -66,6 +73,9 @@ void setup() {
   pinMode(buttonPin_3_CCW, INPUT);
   pinMode(gameActivePin, INPUT);
 
+  pinMode(relayButtonPin, INPUT);
+  pinMode(relayActivatePin, OUTPUT);
+
   myStepper_1.setCurrentPosition(0);
   myStepper_1.setMaxSpeed(1000);
   myStepper_1.setAcceleration(300);
@@ -86,6 +96,21 @@ void loop() {
 
   int gameActive = digitalRead(gameActivePin);
   Serial.println(gameActive);
+
+  newState = digitalRead(relayButtonPin);
+  if((newState != prevState) and (newState == LOW))
+  {
+      // button has been pressed
+      toggleState = !toggleState;
+  }
+  prevState = newState;
+  Serial.println(toggleState);
+
+  if (toggleState == true) {
+    digitalWrite(relayActivatePin, HIGH);
+  } else {
+    digitalWrite(relayActivatePin, LOW);
+  }
 
   // ----- DEBOUNCING -----
   // Debounce motor 1 button CW

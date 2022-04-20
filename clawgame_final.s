@@ -6,7 +6,7 @@
 start: 
     addi $r3, $r0, 0 
     addi $r2, $r0, 1  # Set game active
-    addi $r4, $r0, 40  # Set timer
+    addi $r4, $r0, 60  # Set timer
     addi $r1, $r0, 1  # Store value 1
 waiting: 
     nop
