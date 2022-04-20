@@ -1,0 +1,31 @@
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_PC_reg/loop1[3].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_PC_reg/loop1[7].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_PC_reg/loop1[6].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_PC_reg/loop1[5].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_PC_reg/loop1[23].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_IR_reg/loop1[2].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_IR_reg/loop1[5].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_IR_reg/loop1[22].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_PC_reg/loop1[21].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_IR_reg/loop1[27].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_IR_reg/loop1[23].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_PC_reg/loop1[4].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_IR_reg/loop1[18].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/DX_PC_reg/loop1[16].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_IR_reg/loop1[17].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_PC_reg/loop1[13].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/DX_PC_reg/loop1[17].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/FD_IR_reg/loop1[1].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/DX_PC_reg/loop1[7].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/FD_PC_reg/loop1[19].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/DX_PC_reg/loop1[15].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/DX_IR_reg/loop1[5].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/DX_PC_reg/loop1[1].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/DX_PC_reg/loop1[11].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                               WRAPPER/CPU/DX_PC_reg/loop1[19].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/DX_IR_reg/loop1[0].dff/q_reg/D|
+|              sys_clk_pin |              sys_clk_pin |                                                                WRAPPER/CPU/DX_IR_reg/loop1[2].dff/q_reg/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
