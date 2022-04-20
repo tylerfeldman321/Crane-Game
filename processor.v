@@ -76,12 +76,12 @@ module processor(
 
     // ---------- FINAL PROJECT ADDITIONS ----------
     wire [31:0] increment_score_pc, decrement_timer_pc;
-    assign increment_score_pc = 32'd7;  // SET THIS FOR NEW ASSEMBLY FILE
-    assign decrement_timer_pc = 32'd13;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign increment_score_pc = 32'd8;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign decrement_timer_pc = 32'd14;  // SET THIS FOR NEW ASSEMBLY FILE
 
     wire [31:0] waiting_pc_lower, waiting_pc_upper;
-    assign waiting_pc_lower = 32'd0;  // SET THIS FOR NEW ASSEMBLY FILE
-    assign waiting_pc_upper = 32'd6;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign waiting_pc_lower = 32'd1;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign waiting_pc_upper = 32'd7;  // SET THIS FOR NEW ASSEMBLY FILE
     wire waiting;
     assign waiting = (PC <= waiting_pc_upper) && (PC >= waiting_pc_lower);
 
