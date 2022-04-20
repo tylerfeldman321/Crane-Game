@@ -51,3 +51,4 @@ C:\Users\tyler\Documents\Spring2022\ECE350\final-project-team-25\Display\LED_dis
 C:\Users\tyler\Documents\Spring2022\ECE350\final-project-team-25\Debounce\debouncer.v
 C:\Users\tyler\Documents\Spring2022\ECE350\final-project-team-25\Timing\timer.v
 C:\Users\tyler\Documents\Spring2022\ECE350\final-project-team-25\positive_edge_detector.v
+C:\Users\tyler\Documents\Spring2022\ECE350\final-project-team-25\Timing\one_second_clock.v

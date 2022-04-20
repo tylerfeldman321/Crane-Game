@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Apr 19 16:24:18 2022
+| Date         : Wed Apr 20 00:41:47 2022
 | Host         : DESKTOP-IOM2HT6 running 64-bit major release  (build 9200)
 | Command      : report_methodology -file clawgame_proc_methodology_drc_routed.rpt -pb clawgame_proc_methodology_drc_routed.pb -rpx clawgame_proc_methodology_drc_routed.rpx
 | Design       : clawgame_proc
@@ -23,25 +23,55 @@ Table of Contents
           Floorplan: design_1
       Design limits: <entire design considered>
              Max violations: <unlimited>
-             Violations found: 20
+             Violations found: 27
 +-----------+----------+--------------------------------------------+------------+
 | Rule      | Severity | Description                                | Violations |
 +-----------+----------+--------------------------------------------+------------+
-| LUTAR-1   | Warning  | LUT drives async reset alert               | 1          |
 | SYNTH-6   | Warning  | Timing of a RAM block might be sub-optimal | 1          |
-| TIMING-18 | Warning  | Missing input or output delay              | 18         |
+| TIMING-16 | Warning  | Large setup violation                      | 7          |
+| TIMING-18 | Warning  | Missing input or output delay              | 19         |
 +-----------+----------+--------------------------------------------+------------+
 
 2. REPORT DETAILS
 -----------------
-LUTAR-1#1 Warning
-LUT drives async reset alert  
-LUT cell WRAPPER/CPU/PC_reg/loop1[9].dff/q_i_1__27, with 2 or more inputs, drives asynchronous preset/clear pin(s) WRAPPER/CPU/dff_need_to_increment_score/q_reg/CLR. The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
-Related violations: <none>
-
 SYNTH-6#1 Warning
 Timing of a RAM block might be sub-optimal  
 The timing for the instance WRAPPER/InstMem/dataOut_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+TIMING-16#1 Warning
+Large setup violation  
+There is a large setup violation of -1.033 ns between WRAPPER/CPU/XM_IR_reg/loop1[31].dff/q_reg/C (clocked by sys_clk_pin) and WRAPPER/CPU/PC_reg/loop1[15].dff/q_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#2 Warning
+Large setup violation  
+There is a large setup violation of -1.047 ns between WRAPPER/CPU/XM_IR_reg/loop1[31].dff/q_reg/C (clocked by sys_clk_pin) and WRAPPER/CPU/PC_reg/loop1[12].dff/q_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#3 Warning
+Large setup violation  
+There is a large setup violation of -1.066 ns between WRAPPER/CPU/XM_IR_reg/loop1[31].dff/q_reg/C (clocked by sys_clk_pin) and WRAPPER/CPU/PC_reg/loop1[11].dff/q_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#4 Warning
+Large setup violation  
+There is a large setup violation of -1.082 ns between WRAPPER/CPU/XM_IR_reg/loop1[31].dff/q_reg/C (clocked by sys_clk_pin) and WRAPPER/CPU/PC_reg/loop1[2].dff/q_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#5 Warning
+Large setup violation  
+There is a large setup violation of -1.094 ns between WRAPPER/CPU/XM_IR_reg/loop1[31].dff/q_reg/C (clocked by sys_clk_pin) and WRAPPER/CPU/PC_reg/loop1[16].dff/q_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#6 Warning
+Large setup violation  
+There is a large setup violation of -1.097 ns between WRAPPER/CPU/XM_IR_reg/loop1[31].dff/q_reg/C (clocked by sys_clk_pin) and WRAPPER/CPU/PC_reg/loop1[14].dff/q_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
+Related violations: <none>
+
+TIMING-16#7 Warning
+Large setup violation  
+There is a large setup violation of -1.107 ns between WRAPPER/CPU/XM_IR_reg/loop1[31].dff/q_reg/C (clocked by sys_clk_pin) and WRAPPER/CPU/PC_reg/loop1[5].dff/q_reg/D (clocked by sys_clk_pin). Large setup violations at the end of those stages might be difficult to fix during the post-placement implementation flow and could be the result of non-optimal XDC constraints or non-optimal design architecture
 Related violations: <none>
 
 TIMING-18#1 Warning
@@ -132,6 +162,11 @@ Related violations: <none>
 TIMING-18#18 Warning
 Missing input or output delay  
 An output delay is missing on anode_activate[7] relative to clock(s) sys_clk_pin
+Related violations: <none>
+
+TIMING-18#19 Warning
+Missing input or output delay  
+An output delay is missing on game_active relative to clock(s) sys_clk_pin
 Related violations: <none>
 
 

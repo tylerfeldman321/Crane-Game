@@ -32,18 +32,4 @@ module clawgame_proc(
     wire [15:0] time_left;
     timer TIMER(clock, reset, time_left);
     LED_display_controller LEDCONTROLLER(clock, reset, time_left, score_val, anode_activate, LED_out);
-
-    // initial begin
-    //     game_active = 0;
-    // end
-
-    // always @(posedge start_button) begin
-    //     game_active <= 1;
-    // end
-
-    // always @(posedge end_button) begin
-    //     game_active <= 0;
-    // end
-
-
 endmodule

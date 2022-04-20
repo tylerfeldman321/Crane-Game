@@ -85,6 +85,7 @@ void setup() {
 void loop() {
 
   int gameActive = digitalRead(gameActivePin);
+  Serial.println(gameActive);
 
   // ----- DEBOUNCING -----
   // Debounce motor 1 button CW

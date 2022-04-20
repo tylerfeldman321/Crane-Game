@@ -41,11 +41,13 @@ module processor(
     data_readRegA,                  // I: Data from port A of RegFile
     data_readRegB,                   // I: Data from port B of RegFile
 
-    increment_score_pe
+    increment_score_pe,
+    game_clock_pe
 	 
 	);
 
     input increment_score_pe;
+    input game_clock_pe;
 
 	// Control signals
 	input clock, reset;
@@ -73,18 +75,23 @@ module processor(
     // module alu(data_operandA, data_operandB, ctrl_ALUopcode, ctrl_shiftamt, data_result, isNotEqual, isLessThan, overflow);
 
     // ---------- FINAL PROJECT ADDITIONS ----------
-    wire [31:0] increment_score_pc;
-    assign increment_score_pc = 32'b00000000000000000000000000000111;
+    wire [31:0] increment_score_pc, decrement_timer_pc;
+    assign increment_score_pc = 32'd7;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign decrement_timer_pc = 32'd13;  // SET THIS FOR NEW ASSEMBLY FILE
 
     wire [31:0] waiting_pc_lower, waiting_pc_upper;
-    assign waiting_pc_lower = 32'd0;
-    assign waiting_pc_upper = 32'd6;
+    assign waiting_pc_lower = 32'd0;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign waiting_pc_upper = 32'd6;  // SET THIS FOR NEW ASSEMBLY FILE
     wire waiting;
     assign waiting = (PC <= waiting_pc_upper) && (PC >= waiting_pc_lower);
 
-    wire increment_score;
+    wire increment_score, decrement_timer;
     assign increment_score = increment_score_pe && waiting;
-    assign new_PC = increment_score ? increment_score_pc : new_PC_temp3;
+    assign decrement_timer = game_clock_pe && waiting && ~increment_score;
+
+    wire [31:0] PC, PC_plus_1, current_instruction, FD_PC, FD_IR, new_PC, new_PC_temp1, new_PC_temp2, new_PC_temp3, new_PC_temp4;
+    assign new_PC_temp4 = increment_score ? increment_score_pc : new_PC_temp3;
+    assign new_PC = decrement_timer ? decrement_timer_pc : new_PC_temp4;
 
     
     // Stall logic
@@ -94,7 +101,7 @@ module processor(
 
 
     // Fetch: Create a PC and hook it up with the ROM.v module    
-    wire [31:0] PC, PC_plus_1, current_instruction, FD_PC, FD_IR, new_PC, new_PC_temp1, new_PC_temp2, new_PC_temp3;
+    
     wire isNotEqual_PC_plus_1, isLessThan_PC_plus_1, overflow_PC_plus_1, PC_enable;
 
     assign PC_enable = ~stall;
