@@ -25,12 +25,12 @@
  **/
 
 module Wrapper (clock, reset, score,
-	increment_score);
+	increment_score_pe);
 
 	input clock, reset;
 	output [31:0] score;
 
-	input increment_score;
+	input increment_score_pe;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -55,7 +55,7 @@ module Wrapper (clock, reset, score,
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
 		.data(memDataIn), .q_dmem(memDataOut),
-		.increment_score(increment_score)
+		.increment_score_pe(increment_score_pe)
 		); 
 	
 	// Instruction Memory (ROM)

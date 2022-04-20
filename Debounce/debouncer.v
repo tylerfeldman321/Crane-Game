@@ -30,8 +30,10 @@ module clock_div(clock100MHz, slow_clk_out);
 endmodule
 
 // D-flip-flop for debouncing module 
-module dff(input DFF_CLOCK, D, output reg Q);
+module dff(input DFF_CLOCK, D, output Q_val);
+    reg Q = 0;
     always @ (posedge DFF_CLOCK) begin
         Q <= D;
     end
+    assign Q_val = Q;
 endmodule

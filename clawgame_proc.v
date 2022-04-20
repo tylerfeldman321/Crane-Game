@@ -15,12 +15,14 @@ module clawgame_proc(
     wire [15:0] time_left;
     wire [31:0] score;
 
-    Wrapper WRAPPER(clock, reset, score, increment_score);
+    Wrapper WRAPPER(clock, reset, score, increment_score_pe);
 
     assign game_active = ~(time_left == 32'b0) && ~reset;
 
-    // wire increment_score_debounced, game_start_debounced, reset_debounced;
+    wire increment_score_debounced, increment_score_pe;
     // debouncer increment_score_debouncer(increment_score, clock, increment_score_debounced);
+    positive_edge_detector PE(increment_score, ~clock, 1'b0, increment_score_pe);
+
     // dffe_ref DFF(q, d, clk, en, clr);
 
     timer TIMER(clock, reset, time_left);

@@ -1,14 +1,17 @@
-module positive_edge_detector(
-    input signal,
-    input clock,
-    output positive_edge);
+module positive_edge_detector (
+    input sig,           
+    input clk,            
+    input res,            
+    output pe
+);          
+    reg out;
+    reg sig_dly;                         
 
-    reg signal_delay;
+    wire dff1_out, dff2_out;
+    dffe_ref DFF1(dff1_out, sig, clk, 1'b1, res);  //q, d, clk, en, clr
 
-    always @(posedge clock) begin
-        signal_delay <= signal;
-    end
+    dffe_ref DFF2(dff2_out, dff1_out, clk, 1'b1, res);
 
-    assign positive_edge = signal & ~signal_delay
+    assign pe = dff1_out & ~dff2_out;
 
-endmodule
+endmodule 

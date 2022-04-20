@@ -1,18 +1,13 @@
 .text
 
-waiting:
+waiting: nop
 nop
 nop
 nop
 nop
 nop
-nop
-increment_score:
-nop
-addi $r3, $r3, 1
-nop
-nop
-nop
+j waiting
+increment_score: addi $r3, $r3, 1
 nop
 nop
 nop
