@@ -3,28 +3,49 @@ module clawgame_proc(
     input reset,
     input increment_score,
     output [7:0] anode_activate,
-    output [7:0] LED_out
+    output [7:0] LED_out,
+    output game_active
 );
 
     // INPUTS:
-    // Don't need left/right/up/down, since that goes to the arduino
     // Score increment from Arduino
-    // Reset - set score and timer to zero, tell Arduino game inactive (maybe arduino puts motors on standby)
-    // Game start - set score and timer to zero, keep game as active
+    // Game start - set score to zero and reset the timer, keep game as active. Will come from PMOD port
 
-    wire [15:0] time_left;
+    // OUTPUTS:
+    // Game Active - from PMOD port, tells arduino to cancel motor movement
+
+    // TODO: 
+    // - When time runs out shouldn't be able to increment $r3
+    // - For timer: Create subdivided clock, use positive_edge_detector, then decrement a register each time. In that block of code
+    // - On startup, write 1 to game_active
+
+    wire [31:0] time_left;
     wire [31:0] score;
+    wire time_out;
 
-    Wrapper WRAPPER(clock, reset, score, increment_score);
+    wire increment_score_pe, game_clock_pe;
+    
+    wire reset_debounced;
+    debouncer reset_debouncer(reset, clock, reset_debounced);
 
-    assign game_active = ~(time_left == 32'b0) && ~reset;
+    assign time_out = (time_left == 32'b00000000000000000000000000000000);
 
-    // wire increment_score_debounced, game_start_debounced, reset_debounced;
-    // debouncer increment_score_debouncer(increment_score, clock, increment_score_debounced);
+    Wrapper WRAPPER(clock, reset_debounced, score, increment_score_pe, time_left, game_clock_pe);
+
+    assign game_active = ~(time_left == 32'b0) && ~reset_debounced;
+
+     wire increment_score_debounced;
+     debouncer increment_score_debouncer(increment_score, clock, increment_score_debounced);
+
+    positive_edge_detector PE_score(increment_score_debounced, ~clock, 1'b0, increment_score_pe);
+
     // dffe_ref DFF(q, d, clk, en, clr);
-
-    timer TIMER(clock, reset, time_left);
-    LED_display_controller LEDCONTROLLER(clock, reset, time_left, score[15:0], anode_activate, LED_out);
+    wire game_clock;
+    one_second_clock GAME_TIMER(clock, reset_debounced, game_clock);
+    positive_edge_detector PE_game_clock(game_clock, ~clock, 1'b0, game_clock_pe);
+    
+    //timer TIMER(clock, reset, time_left);
+    LED_display_controller LEDCONTROLLER(clock, reset_debounced, time_left[15:0], score[15:0], anode_activate, LED_out);
 
     // ila_0 debuggers(.clk(clock), .probe0(score), .probe1(reset), .probe2(clock));
 

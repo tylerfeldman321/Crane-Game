@@ -3,12 +3,12 @@
 
 // ----- BUTTONS -----
 // Input Pins
-const int right = 25;
-const int left = 27;
+const int right = 27;
+const int left = 25;
 const int buttonPin_3_CW = 29;
 const int buttonPin_3_CCW = 31;
 
-const int gameActivePin = 33;
+const int gameActivePin = 45;
 
 // Right
 int buttonState_right = LOW;             // the current reading from the input pin
@@ -85,6 +85,7 @@ void setup() {
 void loop() {
 
   int gameActive = digitalRead(gameActivePin);
+  Serial.println(gameActive);
 
   // ----- DEBOUNCING -----
   // Debounce motor 1 button CW

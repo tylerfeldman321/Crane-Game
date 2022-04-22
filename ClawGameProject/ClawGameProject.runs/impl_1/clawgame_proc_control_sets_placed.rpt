@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date         : Tue Apr 19 16:23:35 2022
+| Date         : Wed Apr 20 11:29:20 2022
 | Host         : DESKTOP-IOM2HT6 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file clawgame_proc_control_sets_placed.rpt
 | Design       : clawgame_proc
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |     6 |
-|    Minimum number of control sets                        |     6 |
+| Total control sets                                       |    23 |
+|    Minimum number of control sets                        |    23 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    22 |
+| Unused register locations in slices containing registers |    37 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |     6 |
-| >= 0 to < 4        |     1 |
-| >= 4 to < 6        |     0 |
+| Total control sets |    23 |
+| >= 0 to < 4        |     3 |
+| >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     0 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |     5 |
+| >= 16              |    19 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,11 +58,11 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |               0 |            0 |
-| No           | No                    | Yes                    |             186 |           68 |
-| No           | Yes                   | No                     |               0 |            0 |
+| No           | No                    | No                     |              12 |            9 |
+| No           | No                    | Yes                    |             401 |          145 |
+| No           | Yes                   | No                     |              54 |           14 |
 | Yes          | No                    | No                     |               0 |            0 |
-| Yes          | No                    | Yes                    |             120 |           58 |
+| Yes          | No                    | Yes                    |             480 |          291 |
 | Yes          | Yes                   | No                     |               0 |            0 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
@@ -70,15 +70,32 @@ Table of Contents
 4. Detailed Control Set Information
 -----------------------------------
 
-+------------------+-----------------------------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
-|   Clock Signal   |                          Enable Signal                          |             Set/Reset Signal            | Slice Load Count | Bel Load Count | Bels / Slice |
-+------------------+-----------------------------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
-| ~clock_IBUF_BUFG | increment_score_IBUF                                            | WRAPPER/CPU/PC_reg/loop1[9].dff/q_reg_2 |                1 |              1 |         1.00 |
-|  clock_IBUF_BUFG | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[0] | reset_IBUF                              |               16 |             32 |         2.00 |
-| ~clock_IBUF_BUFG | WRAPPER/CPU/PC_reg/loop1[9].dff/q_reg_1                         | reset_IBUF                              |               28 |             35 |         1.25 |
-|  clock_IBUF_BUFG |                                                                 | reset_IBUF                              |               12 |             47 |         3.92 |
-|  clock_IBUF_BUFG | TIMER/countReg[0]_i_1_n_0                                       | reset_IBUF                              |               13 |             52 |         4.00 |
-| ~clock_IBUF_BUFG |                                                                 | reset_IBUF                              |               56 |            139 |         2.48 |
-+------------------+-----------------------------------------------------------------+-----------------------------------------+------------------+----------------+--------------+
++----------------------------------------------+------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+|                 Clock Signal                 |                           Enable Signal                          |                  Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------------------------------------+------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG                             |                                                                  |                                                    |                2 |              2 |         1.00 |
+|  increment_score_debouncer/u1/slow_clk_reg_0 |                                                                  |                                                    |                2 |              3 |         1.50 |
+|  reset_debouncer/u1/slow_clk                 |                                                                  |                                                    |                2 |              3 |         1.50 |
+| ~clock_IBUF_BUFG                             |                                                                  |                                                    |                3 |              4 |         1.33 |
+|  clock_IBUF_BUFG                             |                                                                  | increment_score_debouncer/u1/counter[0]_i_1__0_n_0 |                7 |             27 |         3.86 |
+|  clock_IBUF_BUFG                             |                                                                  | reset_debouncer/u1/clear                           |                7 |             27 |         3.86 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[8]  | reset_debouncer/d1/reset_debounced                 |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[3]  | reset_debouncer/d1/reset_debounced                 |               16 |             32 |         2.00 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[4]  | reset_debouncer/d1/reset_debounced                 |               18 |             32 |         1.78 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[6]  | reset_debouncer/d1/reset_debounced                 |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[13] | reset_debouncer/d1/reset_debounced                 |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[5]  | reset_debouncer/d1/reset_debounced                 |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[10] | reset_debouncer/d1/reset_debounced                 |               25 |             32 |         1.28 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[9]  | reset_debouncer/d1/reset_debounced                 |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[0]  | reset_debouncer/d1/reset_debounced                 |               22 |             32 |         1.45 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[11] | reset_debouncer/d1/reset_debounced                 |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[1]  | reset_debouncer/d1/reset_debounced                 |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[7]  | reset_debouncer/d1/reset_debounced                 |               19 |             32 |         1.68 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[2]  | reset_debouncer/d1/reset_debounced                 |               17 |             32 |         1.88 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[12] | reset_debouncer/d1/reset_debounced                 |               23 |             32 |         1.39 |
+|  clock_IBUF_BUFG                             | WRAPPER/RegisterFile/writeReg_and_enable/write_enable_onehot[14] | reset_debouncer/d1/reset_debounced                 |               21 |             32 |         1.52 |
+|  clock_IBUF_BUFG                             |                                                                  | reset_debouncer/d1/reset_debounced                 |               12 |             47 |         3.92 |
+| ~clock_IBUF_BUFG                             |                                                                  | reset_debouncer/d1/reset_debounced                 |              133 |            354 |         2.66 |
++----------------------------------------------+------------------------------------------------------------------+----------------------------------------------------+------------------+----------------+--------------+
 
 

@@ -4,11 +4,11 @@ module debouncer(signal, clock, debounced_signal);
 
     wire slow_clock;
     wire Q1, Q2, Q0;
-    clock_div u1(clock, slow_clk);
-    dff d0(slow_clk, signal, Q0);
+    clock_div u1(clock, slow_clock);
+    dff d0(slow_clock, signal, Q0);
 
-    dff d1(slow_clk, Q0, Q1);
-    dff d2(slow_clk, Q1, Q2);
+    dff d1(slow_clock, Q0, Q1);
+    dff d2(slow_clock, Q1, Q2);
 
     assign debounced_signal = Q1 & ~Q2;
 endmodule
@@ -30,8 +30,10 @@ module clock_div(clock100MHz, slow_clk_out);
 endmodule
 
 // D-flip-flop for debouncing module 
-module dff(input DFF_CLOCK, D, output reg Q);
+module dff(input DFF_CLOCK, D, output Q_val);
+    reg Q = 0;
     always @ (posedge DFF_CLOCK) begin
         Q <= D;
     end
+    assign Q_val = Q;
 endmodule

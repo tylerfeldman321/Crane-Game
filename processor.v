@@ -41,11 +41,13 @@ module processor(
     data_readRegA,                  // I: Data from port A of RegFile
     data_readRegB,                   // I: Data from port B of RegFile
 
-    increment_score
+    increment_score_pe,
+    game_clock_pe
 	 
 	);
 
-    input increment_score;
+    input increment_score_pe;
+    input game_clock_pe;
 
 	// Control signals
 	input clock, reset;
@@ -67,70 +69,39 @@ module processor(
 
 	/* YOUR CODE STARTS HERE */
 
-    // Breakdown of logic
-    // While in waiting area, stall the entire processor
-    // Once signal comes in, jump to the correct location, and stop stalling since PC now outside of waiting area
-    // Only want to jump while in waiting area, otherwise do not jump
-    // Will jump back on its own
-
-    wire [31:0] incrementing_score_pc, jumped_instruction;
-    assign incrementing_score_pc = 32'b00000000000000000000000000000111;  // 7
-
-    assign jumped_instruction[31:27] = 5'b00001;
-    assign jumped_instruction[26:0] = incrementing_score_pc[26:0];
-
-    wire any_button_on;
-    assign any_button_on = increment_score;
-
-    dffe_ref a_button_active_last(button_active_last, any_button_on, clock, 1'b1, 1'b0);
-    dffe_ref a_button_active_hold(button_active_hold, button_active_last, clock, 1'b1, 1'b0);
-    dffe_ref a_button_active(button_active, any_button_on, clock, 1'b1, button_active_hold);
-    wire [5:0] count;
-    counter COUNTER(count, clock & button_active, make_jump || (count[2] && count[1] && ~count[0]));
-
-    wire last_was_increment;
-    wire not_increment;
-    assign not_increment = 1'b0;
-    dffe_ref last_seen_score_increment(last_was_increment, increment_score, ~clock, increment_score && button_active, not_increment || (count[2] && ~count[1] && count[0]));
-
-    wire [31:0] waiting_lower_pc, waiting_upper_pc, incrementing_score_lower_pc, incrementing_score_upper_pc;
-    assign waiting_lower_pc = 32'd0;
-    assign waiting_upper_pc = 32'd6;
-    assign incrementing_score_lower_pc = 32'd7;
-    assign incrementing_score_upper_pc = 32'd14;
-
-    wire pc_in_incrementing_score, pc_in_waiting, button_stall;
-    assign pc_in_waiting = (PC >= waiting_lower_pc) && (PC <= waiting_upper_pc);
-    assign pc_in_incrementing_score = (PC >= incrementing_score_lower_pc) && (PC <= incrementing_score_upper_pc);
-    assign button_stall = ~button_active && (pc_in_incrementing_score) && ~X_j && ~(button_active_hold);
-
-    wire make_jump;
-    assign make_jump = button_active && (increment_score);
-
-    assign FD_IR_inserted = make_jump ? jumped_instruction : FD_IR;
-
-
-
-    // wire need_to_increment_score, need_to_increment_score_jump;
-    // dffe_ref dff_need_to_increment_score(need_to_increment_score, increment_score, ~clock, increment_score, ~waiting_for_input);  // Cleared once we jump somewhere else
-    // assign need_to_increment_score_jump = need_to_increment_score && ~last_was_increment;
-
     // iverilog -o proc -c FileList.txt -s Wrapper_tb -P Wrapper_tb.FILE=\"addi_basic\"
 
+    // module register(data_out, clk, data_in, write_enable, clr);
+    // module alu(data_operandA, data_operandB, ctrl_ALUopcode, ctrl_shiftamt, data_result, isNotEqual, isLessThan, overflow);
+
+    // ---------- FINAL PROJECT ADDITIONS ----------
+    wire [31:0] increment_score_pc, decrement_timer_pc;
+    assign increment_score_pc = 32'd11;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign decrement_timer_pc = 32'd18;  // SET THIS FOR NEW ASSEMBLY FILE
+
+    wire [31:0] waiting_pc_lower, waiting_pc_upper;
+    assign waiting_pc_lower = 32'd4;  // SET THIS FOR NEW ASSEMBLY FILE
+    assign waiting_pc_upper = 32'd10;  // SET THIS FOR NEW ASSEMBLY FILE
+    wire waiting;
+    assign waiting = (PC <= waiting_pc_upper) && (PC >= waiting_pc_lower);
+
+    wire increment_score, decrement_timer;
+    assign increment_score = increment_score_pe && waiting;
+    assign decrement_timer = game_clock_pe && waiting && ~increment_score;
+
+    wire [31:0] PC, PC_plus_1, current_instruction, FD_PC, FD_IR, new_PC, new_PC_temp1, new_PC_temp2, new_PC_temp3, new_PC_temp4;
+    assign new_PC_temp4 = increment_score ? increment_score_pc : new_PC_temp3;
+    assign new_PC = decrement_timer ? decrement_timer_pc : new_PC_temp4;
+
+    
     // Stall logic
     // Write nop into D/X.IR (flush_DX), disable F/D latch and PC write enable
     wire stall;
-    assign stall = (X_lw & ((D_read_regA == X_write_reg) | ((D_read_regB == X_write_reg) & ~D_sw))) | multdiv_active | ready_to_write_multdiv_result | button_stall;
-
-    wire [31:0] new_PC, new_PC_temp1, new_PC_temp2, new_PC_temp3;
-    assign new_PC_temp1 = set_pc_to_j_target ? j_target_extended : PC_plus_1;
-    assign new_PC_temp2 = take_branch ? branch_PC : new_PC_temp1;
-    assign new_PC_temp3 = D_jr ? bypassed_jr : new_PC_temp2;
-    assign new_PC = make_jump ? incrementing_score_pc : new_PC_temp3;
+    assign stall = (X_lw & ((D_read_regA == X_write_reg) | ((D_read_regB == X_write_reg) & ~D_sw))) | multdiv_active | ready_to_write_multdiv_result;
 
 
     // Fetch: Create a PC and hook it up with the ROM.v module    
-    wire [31:0] PC, PC_plus_1, current_instruction, FD_PC, FD_IR;
+    
     wire isNotEqual_PC_plus_1, isLessThan_PC_plus_1, overflow_PC_plus_1, PC_enable;
 
     assign PC_enable = ~stall;
@@ -174,6 +145,11 @@ module processor(
     assign bypassed_jr_temp1 = bypass_jr_DX ? XM_O_in : jr_data;
     assign bypassed_jr_temp2 = bypass_B_XM ? XM_O : bypassed_jr_temp1;    
     assign bypassed_jr = bypass_B_MW ? data_writeReg : bypassed_jr_temp2;
+
+    assign new_PC_temp1 = set_pc_to_j_target ? j_target_extended : PC_plus_1;
+    assign new_PC_temp2 = take_branch ? branch_PC : new_PC_temp1;
+    assign new_PC_temp3 = D_jr ? bypassed_jr : new_PC_temp2;
+    
         
     // FD Latch
     wire flush_FD, enable_FD;
@@ -222,7 +198,7 @@ module processor(
     assign DX_PC_in = flush_DX ? 32'b0 : FD_PC;
     assign DX_A_in = flush_DX ? 32'b0 : data_A;
     assign DX_B_in = flush_DX ? 32'b0 : data_B;
-    assign DX_IR_in = flush_DX ? 32'b0 : FD_IR_inserted;
+    assign DX_IR_in = flush_DX ? 32'b0 : FD_IR;
 
     wire [31:0] DX_PC, DX_A, DX_B, DX_IR;
     register DX_PC_reg(DX_PC, ~clock, DX_PC_in, enable_DX, reset);  

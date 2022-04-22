@@ -1,7 +1,7 @@
 Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2020.1 (win64) Build 2902540 Wed May 27 19:54:49 MDT 2020
-| Date             : Tue Apr 19 16:24:19 2022
+| Date             : Wed Apr 20 11:30:35 2022
 | Host             : DESKTOP-IOM2HT6 running 64-bit major release  (build 9200)
 | Command          : report_power -file clawgame_proc_power_routed.rpt -pb clawgame_proc_power_summary_routed.pb -rpx clawgame_proc_power_routed.rpx
 | Design           : clawgame_proc
@@ -30,14 +30,14 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.117        |
+| Total On-Chip Power (W)  | 0.163        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.019        |
+| Dynamic (W)              | 0.065        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
-| Max Ambient (C)          | 84.5         |
-| Junction Temperature (C) | 25.5         |
+| Max Ambient (C)          | 84.3         |
+| Junction Temperature (C) | 25.7         |
 | Confidence Level         | Medium       |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
@@ -52,17 +52,17 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Clocks         |     0.003 |        3 |       --- |             --- |
-| Slice Logic    |    <0.001 |     1930 |       --- |             --- |
-|   LUT as Logic |    <0.001 |     1090 |     63400 |            1.72 |
-|   CARRY4       |    <0.001 |      113 |     15850 |            0.71 |
-|   Register     |    <0.001 |      306 |    126800 |            0.24 |
-|   Others       |     0.000 |      146 |       --- |             --- |
-| Signals        |    <0.001 |     1393 |       --- |             --- |
-| Block RAM      |    <0.001 |      0.5 |       135 |            0.37 |
-| I/O            |     0.014 |       19 |       210 |            9.05 |
+| Clocks         |     0.006 |        3 |       --- |             --- |
+| Slice Logic    |     0.016 |     3857 |       --- |             --- |
+|   LUT as Logic |     0.015 |     2110 |     63400 |            3.33 |
+|   Register     |    <0.001 |      950 |    126800 |            0.75 |
+|   CARRY4       |    <0.001 |      114 |     15850 |            0.72 |
+|   Others       |     0.000 |      385 |       --- |             --- |
+| Signals        |     0.022 |     3053 |       --- |             --- |
+| Block RAM      |     0.004 |        2 |       135 |            1.48 |
+| I/O            |     0.018 |       20 |       210 |            9.52 |
 | Static Power   |     0.097 |          |           |                 |
-| Total          |     0.117 |          |           |                 |
+| Total          |     0.163 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -72,16 +72,16 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.021 |       0.006 |      0.015 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.019 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
-| Vcco33    |       3.300 |     0.008 |       0.004 |      0.004 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.062 |       0.047 |      0.015 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |       NA    | Unspecified | NA         |
+| Vcco33    |       3.300 |     0.009 |       0.005 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco15    |       1.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.001 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |       NA    | Unspecified | NA         |
@@ -138,14 +138,24 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+-----------------+-----------+
-| Name            | Power (W) |
-+-----------------+-----------+
-| clawgame_proc   |     0.019 |
-|   LEDCONTROLLER |     0.001 |
-|   TIMER         |     0.001 |
-|   WRAPPER       |     0.004 |
-|     CPU         |     0.002 |
-+-----------------+-----------+
++------------------+-----------+
+| Name             | Power (W) |
++------------------+-----------+
+| clawgame_proc    |     0.065 |
+|   LEDCONTROLLER  |     0.004 |
+|   WRAPPER        |     0.042 |
+|     CPU          |     0.028 |
+|       DX_IR_reg  |     0.009 |
+|       DX_PC_reg  |     0.002 |
+|       FD_IR_reg  |     0.006 |
+|       MW_IR_reg  |     0.004 |
+|       PC_reg     |     0.002 |
+|       XM_IR_reg  |     0.002 |
+|     InstMem      |     0.005 |
+|     RegisterFile |     0.010 |
+|       register3  |     0.001 |
+|       register31 |     0.002 |
+|       register4  |     0.001 |
++------------------+-----------+
 
 

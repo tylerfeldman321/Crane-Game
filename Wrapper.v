@@ -24,13 +24,14 @@
  *
  **/
 
-module Wrapper (clock, reset, score,
-	increment_score);
+module Wrapper (clock, reset, 
+	score, increment_score_pe,
+	time_left, game_clock_pe);
 
 	input clock, reset;
-	output [31:0] score;
+	output [31:0] score, time_left;
 
-	input increment_score;
+	input increment_score_pe, game_clock_pe;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -55,7 +56,8 @@ module Wrapper (clock, reset, score,
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
 		.data(memDataIn), .q_dmem(memDataOut),
-		.increment_score(increment_score)
+		.increment_score_pe(increment_score_pe),
+		.game_clock_pe(game_clock_pe)
 		); 
 	
 	// Instruction Memory (ROM)
@@ -70,7 +72,8 @@ module Wrapper (clock, reset, score,
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
 		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
-		.score(score));
+		.score(score),
+		.time_left(time_left));
 						
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
