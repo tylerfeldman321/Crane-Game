@@ -16,12 +16,19 @@ The goal of the game is to pickup as many boxes from the playing field and drop 
 Below is a birds-eye view of the game and playing area. The boxes are outlined with red tape, as is the acrylic case on the left, where the user is meant to drop the boxes.
 
 <p align="center">
-  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/birds-eye-view.jpg" width="700">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/birds-eye-view.jpg" width="500">
 </p>
 
 ## Design
 ### Mechanical Design
 #### Crane
+
+#### Winding Wheel
+We designed custom wheels that were spun by our stepper motors so that the fishing wire attached to the end of the boom of the crane could be efficiently wound up. We designed wheels that could fit the shaft of the stepper motors and provide a rod where the fishing wire could be tied and hot glued to. The wheels were also designed with a large enough radius so that the fishing wire wound wind fast enough. They were also designed with a large lip to prevent the fishing wire from slipping out of the wheel when winding or unwinding.
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/winding-wheel-design.png" width="700">
+</p>
 
 #### Control Panel
 Our control panel was designed to be visually clean and appealing for the user. To do this, we wanted to use panel-mount buttons. We found some viable options for purchase but for full customizability, it made sense to 3D print the buttons. Each button had a outer casing and a inner piece that would fit inside. The outer casing would provide enough room for a common button to be placed at the bottom. When the inner piece is pressed by the user, it would click the button inside as well. The buttons were placed the casing before being hot glued and soldering the connections. Below you can see the design for the start button (left), the front of the control panel when the relay is turned on (middle), and the back of the control panel (right).
@@ -32,11 +39,17 @@ Our control panel was designed to be visually clean and appealing for the user. 
   <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/panel-mounted-buttons-back.jpg" width="400">
 </p>
 
-The control panel was laser cut using wood
+The control panel was laser cut using thin wood and then glued together after fitting the pieces together. Because our wires and electronics took a lot of space, we weren't able to close the control panel and fit everything in. The control panel and FPGA housing were designed with slots in the sides so that wires could escape out the back or through from the control panel electronics to the FPGA and vice-versa. 
 
 #### Boxes
+The boxes were laser cut from wood. To create enough sound so that the sound sensor could easily pick up when a box is dropped in the acrylic case, we put washers inside the boxes. We also hot glued varying-sized washers to the outside of each box so that the electromagnet could pick up each box.
 
 #### Acrylic Case
+The acrylic case was laser cut from acrylic. It was designed as a tall rectangular prism with no top or bottom so that boxes could be dropped into it. We also left a slot in the bottom on one of the sides so that the sound sensor or other electronics could make their way inside the case.
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/sound-sensor-setup.jpg" width="200">
+</p>
 
 ### Electrical Design
 Our electrical system consisted of:
