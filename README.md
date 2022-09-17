@@ -16,14 +16,28 @@ The goal of the game is to pickup as many boxes from the playing field and drop 
 #### Boxes
 
 ### Electrical Design
+Our electrical system consisted of:
+- An arduino to control the stepper motors
+- Stepper motor arduino shield attached to the arduino to simplify the control and wiring of multiple stepper motors
+- 12 V power suppy for the stepper motors
+- Three stepper motors
+- An arduino to handle toggling the electromagnet via the relay and handle input from the sound sensor
+- Sound sensor
+- Relay to electronically control the electromagnet
+- FPGA to handle game logic and send/recieve control signals
+- 5V to 3.3V voltage divider to convert signals from the 5V arduino signals to 3.3V for the FPGA 
+
 #### Electrical Diagram for Entire System
 <p align="center">
   <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/electrical-diagram.png" width="1000">
 </p>
 
-#### Components Used
-
 ### Software Design
+Our main assembly script for the game logic worked as an event-based program. When particular input signals were recieved by the FPGA, the code would jump to a particular section to handle whatever event occured. It simply consisted of initializing our variables, and then incrementing the score and decrementing the timer when necessary.
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/assembly-file.png" width="400">
+</p>
 
 ## Design Journey
 We had initially decided on the idea of creating a game built like a claw machine (but with an electromagnet instead of a claw), where there is a claw able to be translated in all three directions. This mechanical system is fairly similar to a 3D printer. We also looked into alterante motor / belt configurations like CoreXY as we designed the system. When we finally began prototyping after our parts arrived, we found out that this system is much more difficult to construct that we believed. The precision in our measurements and the calibration of the belts and entire system would have to be perfect or else the system could fail or break. We also realized that the precision movement that this system offered isn't necessary for a game - as long as the user can control generally where the claw goes, they'll have a fun or at least a not-frustrating time playing the game.
