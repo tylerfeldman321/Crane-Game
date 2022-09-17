@@ -10,7 +10,7 @@ The goal of the game is to pickup as many boxes from the playing field and drop 
 
 ### Electrical Design
 
-### 
+### Software Design
 
 ## Design Journey
 
