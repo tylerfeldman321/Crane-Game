@@ -21,11 +21,13 @@ Our electrical system consisted of:
 - Stepper motor arduino shield attached to the arduino to simplify the control and wiring of multiple stepper motors
 - 12 V power suppy for the stepper motors
 - Three stepper motors
-- An arduino to handle toggling the electromagnet via the relay and handle input from the sound sensor
+- An arduino to handle toggling the electromagnet via the relay and handle input from the sound sensor. This arduino would tell the FPGA to increment the score when there were spikes in the sound sensor data.
 - Sound sensor
 - Relay to electronically control the electromagnet
 - FPGA to handle game logic and send/recieve control signals
-- 5V to 3.3V voltage divider to convert signals from the 5V arduino signals to 3.3V for the FPGA 
+- 5V to 3.3V voltage divider to convert signals from the 5V arduino signals to 3.3V for the FPGA
+
+After soldering all of our components together, we realized that our relay system was not electrically isolated from the rest of the system. Because of this, when we would activate the relay, a voltage spike would occur, causing other signals, like the one to increment the score, to fluctuate. Rather than rewiring / resoldering our connections to isolate the relay, we found a solution through our processor design. By debouncing the input signals to the FPGA, we were able to ignore sudden spikes in the input signals, such as when the relay is toggled.
 
 #### Electrical Diagram for Entire System
 <p align="center">
@@ -38,6 +40,10 @@ Our main assembly script for the game logic worked as an event-based program. Wh
 <p align="center">
   <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/assembly-file.png" width="400">
 </p>
+
+To accomodate this event-based system, we had to add in interrupt signals into our processor design. When one of these signals was high, then the assembly program would jump directly to the assembly code section to handle the corresponding event, such as when the score needs to be incremented.
+
+We also had arduino code to control the motors, receive and filter input from the sound sensor, and to control the relay. Most of this code was making decisions based on the inputs from the buttons on the control panel. The stepper motor controller code was quite simple since we used the AccelStepper library.
 
 ## Design Journey
 We had initially decided on the idea of creating a game built like a claw machine (but with an electromagnet instead of a claw), where there is a claw able to be translated in all three directions. This mechanical system is fairly similar to a 3D printer. We also looked into alterante motor / belt configurations like CoreXY as we designed the system. When we finally began prototyping after our parts arrived, we found out that this system is much more difficult to construct that we believed. The precision in our measurements and the calibration of the belts and entire system would have to be perfect or else the system could fail or break. We also realized that the precision movement that this system offered isn't necessary for a game - as long as the user can control generally where the claw goes, they'll have a fun or at least a not-frustrating time playing the game.
