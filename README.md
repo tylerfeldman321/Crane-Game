@@ -6,14 +6,37 @@
 ## Project Description
 This is a project a partner and I built for an advanced computer architecture course. We incorporated a custom processor into a physical system we built to create a crane game where the user picks up boxes and drops them into a container to gain points. Our processor keeps track of the score and game logic while the rest of the system handles motors and sensors.
 
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/front-view.jpg" width="700">
+</p>
+
 ## Game
 The goal of the game is to pickup as many boxes from the playing field and drop them into a acrylic case before time runs out. Once the user presses the start button, time will start counting down from a amount configured in the code (1 minute as default). When the game is active, the user can use the controls to rotate a PVC crane left or right, and move an electromagnet up/down that is hanging off the boom of the crane. The user can click a button to toggle the electromagnet, allowing the crane to pick up the boxes in the playing field. They can then drop them into the acrylic case, gaining points. After the time runs out, the points are recorded and game stops.
 
-### Design
+Below is a birds-eye view of the game and playing area. The boxes are outlined with red tape, as is the acrylic case on the left, where the user is meant to drop the boxes.
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/birds-eye-view.jpg" width="700">
+</p>
+
+## Design
 ### Mechanical Design
-#### Control Panel
 #### Crane
+
+#### Control Panel
+Our control panel was designed to be visually clean and appealing for the user. To do this, we wanted to use panel-mount buttons. We found some viable options for purchase but for full customizability, it made sense to 3D print the buttons. Each button had a outer casing and a inner piece that would fit inside. The outer casing would provide enough room for a common button to be placed at the bottom. When the inner piece is pressed by the user, it would click the button inside as well. The buttons were placed the casing before being hot glued and soldering the connections. Below you can see the design for the start button (left), the front of the control panel when the relay is turned on (middle), and the back of the control panel (right).
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/button.png" width="185">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/panel-mounted-buttons-front.jpg" width="400">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/panel-mounted-buttons-back.jpg" width="400">
+</p>
+
+The control panel was laser cut using wood
+
 #### Boxes
+
+#### Acrylic Case
 
 ### Electrical Design
 Our electrical system consisted of:
@@ -24,15 +47,23 @@ Our electrical system consisted of:
 - An arduino to handle toggling the electromagnet via the relay and handle input from the sound sensor. This arduino would tell the FPGA to increment the score when there were spikes in the sound sensor data.
 - Sound sensor
 - Relay to electronically control the electromagnet
+- LED to signal to the user whether the electromagnet is turned on
 - FPGA to handle game logic and send/recieve control signals
 - 5V to 3.3V voltage divider to convert signals from the 5V arduino signals to 3.3V for the FPGA
 
-After soldering all of our components together, we realized that our relay system was not electrically isolated from the rest of the system. Because of this, when we would activate the relay, a voltage spike would occur, causing other signals, like the one to increment the score, to fluctuate. Rather than rewiring / resoldering our connections to isolate the relay, we found a solution through our processor design. By debouncing the input signals to the FPGA, we were able to ignore sudden spikes in the input signals, such as when the relay is toggled.
+Below are pictures of the electrical system in the control panel and the connections from these electronics to the FPGA.
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/electronics.jpg" width="300">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/FPGA-connections.jpg" width="300">
+</p>
 
 #### Electrical Diagram for Entire System
 <p align="center">
   <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/electrical-diagram.png" width="1000">
 </p>
+
+#### Complication with Relay
+After soldering all of our components together, we realized that our relay system was not electrically isolated from the rest of the system. Because of this, when we would activate the relay, a voltage spike would occur, causing other signals, like the one to increment the score, to fluctuate. Rather than rewiring / resoldering our connections to isolate the relay, we found a solution through our processor design. By debouncing the input signals to the FPGA, we were able to ignore sudden spikes in the input signals, such as when the relay is toggled.
 
 ### Software Design
 Our main assembly script for the game logic worked as an event-based program. When particular input signals were recieved by the FPGA, the code would jump to a particular section to handle whatever event occured. It simply consisted of initializing our variables, and then incrementing the score and decrementing the timer when necessary.
