@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="your_relative_path_here" width="350">
+</p>
+
 # Advanced Computer Architecture (ECE 350) Project - Crane Game
 ## Project Description
 This is a project a partner and I built for an advanced computer architecture course. We incorporated a custom processor into a physical system we built to create a crane game where the user picks up boxes and drops them into a container to gain points. Our processor keeps track of the score and game logic while the rest of the system handles motors and sensors.
@@ -7,12 +11,38 @@ The goal of the game is to pickup as many boxes from the playing field and drop 
 
 ### Design
 ### Mechanical Design
+#### Control Panel
+#### Crane
+#### Boxes
 
 ### Electrical Design
+#### Electrical Diagram for Entire System
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/electrical-diagram.png" width="1000">
+</p>
+
+#### Components Used
 
 ### Software Design
 
 ## Design Journey
+We had initially decided on the idea of creating a game built like a claw machine (but with an electromagnet instead of a claw), where there is a claw able to be translated in all three directions. This mechanical system is fairly similar to a 3D printer. We also looked into alterante motor / belt configurations like CoreXY as we designed the system. When we finally began prototyping after our parts arrived, we found out that this system is much more difficult to construct that we believed. The precision in our measurements and the calibration of the belts and entire system would have to be perfect or else the system could fail or break. We also realized that the precision movement that this system offered isn't necessary for a game - as long as the user can control generally where the claw goes, they'll have a fun or at least a not-frustrating time playing the game.
+
+That led us to start prototyping and brainstorming new solutions. We landed on two potential solutions: 1) creating a 2D system where a gantry would move along a linear V-slot rail and the electromagnet could be moved up and down, and 2) a crane system where the crane could be rotated left or right. We settled on the crane system as our primary option, and built a very rudamentary initial prototype seen below. The strings could be wound to pull the end of the crane's boom in either direction to rotate it.
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/early-prototype.png" width="350">
+</p>
+
+Our next prototype involved taping some stepper motors down, using winding wheels to wind up fishing wire connected to the boom of the crane, and using a breadboard for our electrical system to control the stepper motors.
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/middle-stage-prototype.png" width="350">
+</p>
+
+We then moved onto more advanced prototypes and continued fabricating the different parts of the game. For score keeping, we had initially planned to use force sensors glued to the bottom of a plate. When the boxes would land on the plate, the force sensors would pick this up and the score would be increased. However, these force sensors kept breaking and were often inconsistent with their measurements. We found a spare sound sensor lying around and decided to use this instead. By filling the boxes with washers, they would make a loud clattering noise when dropped, which could be easily picked up by the sound sensor while filtering out any normal-volume noises.
+
+We learned that, especially for mechanical systems like this, prototyping is extremely important. It should be done alongside brainstorming and designing, rather than spending time designing a system only to find out that it doesn't actually work.
 
 # Processor Design
 ## Description of Design
