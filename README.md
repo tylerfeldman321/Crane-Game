@@ -22,6 +22,13 @@ Below is a birds-eye view of the game and playing area. The boxes are outlined w
 ## Design
 ### Mechanical Design
 #### Crane
+The crane was built out of PVC and built so that the boom of the crane (the horizontal section at the top) could rotate freely. By attaching fishing wire on either side of the end of the boom, we could rotate the crane's boom by pulling on one string and providing slack in the other. To pull / provide slack to the wire, we used a stepper motor on either side that each had wheels that could wind / unwind the wire on that side. When one motor winds the wire and the other unwinds the wire, the crane's boom will be rotated in one direction. Reversing this would cause the crane's boom to rotate in the other direction.
+
+<p align="center">
+  <img src="https://github.com/tylerfeldman321/Crane-Game/blob/main/Figures/crane-movement.png" width="350">
+</p>
+
+There is also a third stepper motor placed behind the crane, which winds / unwinds a piece of fishing that runs through the boom of the crane and connects to the hanging electromagnet. When the fishing wire is wound, the electromagnet moves upwards, and when the wire is unwound, the electromagnet moves downwards.
 
 #### Winding Wheel
 We designed custom wheels that were spun by our stepper motors so that the fishing wire attached to the end of the boom of the crane could be efficiently wound up. We designed wheels that could fit the shaft of the stepper motors and provide a rod where the fishing wire could be tied and hot glued to. The wheels were also designed with a large enough radius so that the fishing wire wound wind fast enough. They were also designed with a large lip to prevent the fishing wire from slipping out of the wheel when winding or unwinding.
