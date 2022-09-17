@@ -1,5 +1,18 @@
-# ECE 350 Project - Crane Game
-Project built for ECE 350. Used processor we built and uploaded to an FPGA to add up score and keep track of time remaining and whether the game was active. Used two arduinos to control motors to rotate a small crane, raise and lower an electromagnet, and use a relay to power the electromagnet to pick up boxes. The boxes could be dropped into an acyrlic case and detected by a sound sensor, which would communicate to the FPGA to increment the score. A start button was used to reset the score and the timer.
+# Advanced Computer Architecture (ECE 350) Project - Crane Game
+## Project Description
+This is a project a partner and I built for an advanced computer architecture course. We incorporated a custom processor into a physical system we built to create a crane game where the user picks up boxes and drops them into a container to gain points. Our processor keeps track of the score and game logic while the rest of the system handles motors and sensors.
+
+## Game
+The goal of the game is to pickup as many boxes from the playing field and drop them into a acrylic case before time runs out. Once the user presses the start button, time will start counting down from a amount configured in the code (1 minute as default). When the game is active, the user can use the controls to rotate a PVC crane left or right, and move an electromagnet up/down that is hanging off the boom of the crane. The user can click a button to toggle the electromagnet, allowing the crane to pick up the boxes in the playing field. They can then drop them into the acrylic case, gaining points. After the time runs out, the points are recorded and game stops.
+
+### Design
+### Mechanical Design
+
+### Electrical Design
+
+### 
+
+## Design Journey
 
 # Processor Design
 ## Description of Design
